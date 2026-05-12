@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the District — Asset District</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #F8F5F0;
+    --bg2:     #EFE9E0;
+    --dark:    #121110;
+    --text:    #1E1E1E;
+    --accent:  #7A8366;
+    --accent2: #B7A98E;
+    --border:  rgba(30,30,30,0.1);
+    --wa:      #25D366;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--bg);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 0 5vw;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    z-index: 10;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent2); }
+
+  .nav-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,245,240,0.3);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 7rem 5vw 5rem;
+    overflow: hidden;
+  }
+
+  /* Radial glow background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(122,131,102,0.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(183,169,142,0.3), transparent);
+  }
+
+  /* Animated badge */
+  .badge-wrap {
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s ease forwards;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(183,169,142,0.2);
+    border-radius: 100px;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent2);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--wa);
+    animation: pulse-dot 2s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 1.8rem;
+    color: var(--bg);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.3s ease forwards;
+  }
+
+  h1 em { font-style: italic; color: var(--accent2); }
+
+  .hero-sub {
+    max-width: 520px;
+    font-size: 1rem;
+    color: rgba(248,245,240,0.55);
+    margin: 0 auto 4rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s ease forwards;
+  }
+
+  /* ── MAIN CTA CARD ── */
+  .whatsapp-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(183,169,142,0.15);
+    border-radius: 4px;
+    padding: 3.5rem 3rem;
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto 5rem;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s ease forwards;
+  }
+
+  /* Gold top rule */
+  .whatsapp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 15%; right: 15%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent2), transparent);
+  }
+
+  .wa-icon-wrap {
+    width: 64px;
+    height: 64px;
+    background: var(--wa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 40px rgba(37,211,102,0.2);
+  }
+
+  .whatsapp-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--bg);
+    margin-bottom: 0.8rem;
+  }
+
+  .whatsapp-card h2 em { font-style: italic; color: var(--accent2); }
+
+  .whatsapp-card p {
+    font-size: 0.88rem;
+    color: rgba(248,245,240,0.5);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .btn-whatsapp-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    background: var(--wa);
+    color: white;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.1rem 2rem;
+    border-radius: 100px;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    margin-bottom: 1.2rem;
+  }
+
+  .btn-whatsapp-main:hover {
+    background: #1fba58;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,211,102,0.25);
+  }
+
+  .wa-note {
+    font-size: 0.65rem;
+    color: rgba(248,245,240,0.25);
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  /* ── WHAT TO EXPECT ── */
+  .expect-section {
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s ease forwards;
+  }
+
+  .expect-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--bg);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .expect-section h3 em { font-style: italic; color: var(--accent2); }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .expect-card {
+    background: var(--dark);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+
+  .expect-card:hover { background: rgba(255,255,255,0.03); }
+
+  .expect-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: rgba(183,169,142,0.2);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .expect-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bg);
+    margin-bottom: 0.6rem;
+  }
+
+  .expect-card p {
+    font-size: 0.78rem;
+    color: rgba(248,245,240,0.4);
+    line-height: 1.65;
+  }
+
+  /* ── EMAIL CONFIRM NOTICE ── */
+  .email-notice {
+    max-width: 520px;
+    margin: 0 auto 5rem;
+    border: 1px solid rgba(183,169,142,0.12);
+    border-left: 2px solid var(--accent2);
+    padding: 1.3rem 1.8rem;
+    border-radius: 0 2px 2px 0;
+    font-size: 0.82rem;
+    color: rgba(248,245,240,0.45);
+    line-height: 1.65;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.05s ease forwards;
+  }
+
+  .email-notice a {
+    color: var(--accent2);
+    text-decoration: none;
+  }
+  .email-notice a:hover { text-decoration: underline; }
+
+  /* ── BACK CTA ── */
+  .back-cta {
+    text-align: center;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.15s ease forwards;
+  }
+
+  .back-cta p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(248,245,240,0.35);
+    margin-bottom: 1.8rem;
+  }
+
+  .btn-ghost {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: transparent;
+    color: rgba(248,245,240,0.55);
+    border: 1px solid rgba(248,245,240,0.15);
+    padding: 0.9rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: border-color 0.25s, color 0.25s, transform 0.2s;
+    display: inline-block;
+    margin: 0 0.4rem;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost-solid {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--bg);
+    color: var(--dark);
+    border: 1px solid transparent;
+    padding: 0.9rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+    margin: 0 0.4rem;
+  }
+
+  .btn-ghost-solid:hover { background: var(--accent2); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2.5rem 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo span { color: var(--accent2); }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,245,240,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent2); }
+
+  .footer-copy {
+    font-size: 0.62rem;
+    color: rgba(248,245,240,0.15);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    h1 { font-size: 2.8rem; }
+    .expect-grid { grid-template-columns: 1fr; gap: 1px; }
+    .whatsapp-card { padding: 2.5rem 1.8rem; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .btn-ghost, .btn-ghost-solid { display: block; max-width: 240px; margin: 0.4rem auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="asset-district.html" class="nav-logo">asset<span>DISTRICT.</span></a>
+  <span class="nav-tag">Private Community</span>
+</nav>
+
+<!-- HERO -->
+<main class="hero">
+
+  <div class="badge-wrap">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      You're now part of the District
+    </div>
+  </div>
+
+  <h1>Welcome to<br>the<em> District.</em></h1>
+  <p class="hero-sub">You've just joined a private ecosystem of founders who are building with clarity, structure, and real intent. Here's everything you need to get started.</p>
+
+  <!-- WHATSAPP CARD -->
+  <div class="whatsapp-card">
+    <div class="wa-icon-wrap">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.088 1.504 5.808L0 24l6.354-1.487A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.213-3.771.883.935-3.667-.234-.376A9.818 9.818 0 0 1 12 2.182c5.428 0 9.818 4.39 9.818 9.818 0 5.429-4.39 9.818-9.818 9.818z"/>
+      </svg>
+    </div>
+
+    <h2>Join the Private<em> WhatsApp</em> Community</h2>
+    <p>This is where the real conversations happen — strategy, accountability, insights, and direct access to Katarina and fellow founders inside the District.</p>
+
+    <!-- ↓ Replace YOUR_WHATSAPP_INVITE_LINK with your actual WhatsApp group invite URL -->
+    <a href="https://chat.whatsapp.com/YOUR_WHATSAPP_INVITE_LINK"
+       class="btn-whatsapp-main"
+       target="_blank"
+       rel="noopener noreferrer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.088 1.504 5.808L0 24l6.354-1.487A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.213-3.771.883.935-3.667-.234-.376A9.818 9.818 0 0 1 12 2.182c5.428 0 9.818 4.39 9.818 9.818 0 5.429-4.39 9.818-9.818 9.818z"/>
+      </svg>
+      Join the WhatsApp Community
+    </a>
+
+    <p class="wa-note">Link opens in WhatsApp. By joining you agree to the community guidelines.</p>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="expect-section">
+    <h3>What to Expect<em> Inside</em></h3>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="expect-num">01</div>
+        <h4>Weekly Insights</h4>
+        <p>Every week, Katarina shares a strategic insight, framework, or real-world lesson directly inside the group.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-num">02</div>
+        <h4>Private Sessions</h4>
+        <p>Community members get first access and priority spots to live sessions, workshops, and group Q&As.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-num">03</div>
+        <h4>Early Access</h4>
+        <p>All new digital products, templates, and tools are offered to District members first — at member pricing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL NOTICE -->
+  <div class="email-notice">
+    A welcome email with your free resources and community guidelines has been sent to your inbox. Can't find it? Check your spam or <a href="mailto:hello@assetdistrict.com">email us directly</a>.
+  </div>
+
+  <!-- BACK CTAS -->
+  <div class="back-cta">
+    <p>Explore more while you're here</p>
+    <a href="asset-district.html#resources" class="btn-ghost-solid">Browse Resources & Products</a>
+    <a href="asset-district.html#contact" class="btn-ghost">Book a Strategic Call</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <a href="asset-district.html" class="footer-logo">asset<span>DISTRICT.</span></a>
+  <div class="footer-links">
+    <a href="asset-district.html">Home</a>
+    <a href="asset-district.html#resources">Resources</a>
+    <a href="asset-district.html#contact">Contact</a>
+    <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a>
+  </div>
+  <span class="footer-copy">© 2026 Asset District</span>
+</footer>
+
+</body>
+</html>
