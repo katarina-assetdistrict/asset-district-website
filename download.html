@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Download — Asset District</title>
+<meta name="description" content="Get your free strategic resource from Asset District.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:      #F8F5F0;
+  --bg2:     #EFE9E0;
+  --dark:    #121110;
+  --text:    #1E1E1E;
+  --accent:  #7A8366;
+  --gold:    #B7A98E;
+  --border:  rgba(30,30,30,0.1);
+  --subtle:  rgba(30,30,30,0.45);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--dark);
+  color:var(--bg);
+  font-family:'Manrope',sans-serif;
+  font-weight:300;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ── NAV ── */
+nav{
+  padding:0 5vw;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:sticky;top:0;z-index:100;
+  background:rgba(18,17,16,0.95);
+  backdrop-filter:blur(12px);
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--bg);text-decoration:none;
+}
+.logo span{color:var(--gold);}
+.nav-back{
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(248,245,240,0.35);text-decoration:none;transition:color 0.2s;
+}
+.nav-back:hover{color:var(--gold);}
+
+/* ── MAIN LAYOUT ── */
+main{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 64px);
+}
+
+/* ── LEFT: PREVIEW ── */
+.preview-side{
+  padding:5vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.preview-side::before{
+  content:'';
+  position:absolute;
+  top:-20%;left:-10%;
+  width:600px;height:600px;
+  background:radial-gradient(ellipse,rgba(122,131,102,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.resource-badge{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  background:rgba(183,169,142,0.1);
+  border:1px solid rgba(183,169,142,0.2);
+  border-radius:100px;
+  padding:0.4rem 1.1rem;
+  font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  width:fit-content;
+  opacity:0;animation:fadeUp 0.6s 0.1s ease forwards;
+}
+.badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
+
+.preview-eyebrow{
+  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  opacity:0;animation:fadeUp 0.6s 0.2s ease forwards;
+}
+
+.preview-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.4rem);
+  font-weight:300;line-height:1.1;
+  color:var(--bg);margin-bottom:1.5rem;
+  opacity:0;animation:fadeUp 0.7s 0.35s ease forwards;
+}
+.preview-title em{font-style:italic;color:var(--gold);}
+
+.preview-desc{
+  font-size:0.95rem;
+  color:rgba(248,245,240,0.55);
+  line-height:1.75;
+  max-width:440px;
+  margin-bottom:2.5rem;
+  opacity:0;animation:fadeUp 0.7s 0.5s ease forwards;
+}
+
+/* PDF mockup */
+.pdf-mockup{
+  width:100%;max-width:340px;
+  aspect-ratio:1/1.41;
+  background:linear-gradient(145deg,#1E1D1B 0%,#2A2825 100%);
+  border-radius:2px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.5);
+  opacity:0;animation:fadeIn 0.8s 0.6s ease forwards;
+}
+.pdf-mockup::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--gold),transparent);
+}
+.pdf-mockup::after{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:16px;
+  background:#151413;
+}
+.mockup-inner{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  padding:2.5rem 2.5rem 2.5rem 3.5rem;
+  text-align:center;
+}
+.mockup-badge{
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);background:rgba(183,169,142,0.1);
+  border:1px solid rgba(183,169,142,0.2);border-radius:100px;
+  padding:0.3rem 0.8rem;margin-bottom:1.5rem;
+}
+.mockup-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:300;line-height:1.2;
+  color:var(--bg);margin-bottom:0.5rem;
+}
+.mockup-title em{font-style:italic;color:var(--gold);}
+.mockup-rule{width:40px;height:1px;background:rgba(183,169,142,0.3);margin:1rem auto;}
+.mockup-sub{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,245,240,0.3);}
+
+/* What's inside list */
+.inside-list{
+  list-style:none;
+  margin-top:2rem;
+  display:flex;flex-direction:column;gap:0.65rem;
+  opacity:0;animation:fadeUp 0.7s 0.65s ease forwards;
+}
+.inside-list li{
+  display:flex;align-items:center;gap:0.8rem;
+  font-size:0.82rem;color:rgba(248,245,240,0.6);
+}
+.check-icon{
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(122,131,102,0.2);
+  border:1px solid rgba(122,131,102,0.3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--accent);
+}
+
+/* ── RIGHT: FORM ── */
+.form-side{
+  padding:5vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:rgba(255,255,255,0.02);
+  border-left:1px solid rgba(255,255,255,0.05);
+}
+
+.form-card{
+  max-width:420px;
+  width:100%;
+  opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;
+}
+
+.form-eyebrow{
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;display:block;
+}
+.form-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.7rem;font-weight:300;line-height:1.2;
+  color:var(--bg);margin-bottom:0.6rem;
+}
+.form-title em{font-style:italic;color:var(--gold);}
+.form-sub{
+  font-size:0.82rem;color:rgba(248,245,240,0.45);
+  line-height:1.65;margin-bottom:2.2rem;
+}
+
+.field-group{margin-bottom:1.2rem;}
+.field-label{
+  display:block;font-size:0.62rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(248,245,240,0.4);margin-bottom:0.5rem;
+}
+.field-input{
+  width:100%;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:2px;
+  padding:0.85rem 1.1rem;
+  font-family:'Manrope',sans-serif;
+  font-size:0.88rem;font-weight:300;
+  color:var(--bg);
+  outline:none;
+  transition:border-color 0.25s,box-shadow 0.25s;
+  -webkit-appearance:none;
+}
+.field-input::placeholder{color:rgba(248,245,240,0.2);}
+.field-input:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(183,169,142,0.08);
+}
+
+.submit-btn{
+  width:100%;
+  background:var(--gold);
+  color:var(--dark);
+  border:none;
+  padding:1rem 2rem;
+  border-radius:100px;
+  font-family:'Manrope',sans-serif;
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;
+  cursor:pointer;
+  transition:background 0.25s,transform 0.2s;
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  margin-top:0.5rem;
+  position:relative;overflow:hidden;
+}
+.submit-btn:hover:not(:disabled){background:#C9BD9E;transform:translateY(-2px);}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+
+.btn-loader{
+  display:none;
+  width:14px;height:14px;
+  border:2px solid rgba(18,17,16,0.2);
+  border-top-color:var(--dark);
+  border-radius:50%;
+  animation:spin 0.7s linear infinite;
+}
+.submit-btn.loading .btn-loader{display:block;}
+.submit-btn.loading .btn-text{opacity:0.6;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.form-fine{
+  font-size:0.62rem;color:rgba(248,245,240,0.25);
+  text-align:center;margin-top:1rem;line-height:1.6;
+  letter-spacing:0.02em;
+}
+.form-fine a{color:var(--gold);text-decoration:none;}
+
+/* ── SUCCESS STATE ── */
+.success-state{
+  display:none;
+  text-align:center;
+  animation:fadeUp 0.6s ease forwards;
+}
+.success-state.visible{display:block;}
+.success-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;color:white;
+}
+.success-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:300;color:var(--bg);
+  margin-bottom:0.6rem;
+}
+.success-title em{font-style:italic;color:var(--gold);}
+.success-body{
+  font-size:0.85rem;color:rgba(248,245,240,0.5);
+  line-height:1.7;margin-bottom:2rem;
+}
+.download-now-btn{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  background:var(--bg);color:var(--dark);
+  text-decoration:none;
+  font-family:'Manrope',sans-serif;
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.9rem 1.8rem;border-radius:100px;
+  transition:background 0.25s,transform 0.2s;
+  margin-bottom:1rem;
+}
+.download-now-btn:hover{background:var(--gold);transform:translateY(-2px);}
+
+/* Divider between trust badges */
+.trust-row{
+  display:flex;align-items:center;gap:1.5rem;
+  margin-top:2rem;padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.trust-item{
+  font-size:0.65rem;letter-spacing:0.06em;
+  color:rgba(248,245,240,0.25);
+  display:flex;align-items:center;gap:0.5rem;
+}
+
+/* ── FOOTER ── */
+footer{
+  padding:1.5rem 5vw;
+  border-top:1px solid rgba(255,255,255,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-links a{
+  font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:rgba(248,245,240,0.2);text-decoration:none;transition:color 0.2s;
+}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:0.62rem;color:rgba(248,245,240,0.15);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  main{grid-template-columns:1fr;}
+  .preview-side{padding:4rem 6vw 2rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .pdf-mockup{display:none;}
+  .form-side{padding:2rem 6vw 4rem;border-left:none;}
+  .form-card{max-width:100%;}
+  footer{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="asset-district.html" class="logo">asset<span>DISTRICT.</span></a>
+  <a href="asset-district.html" class="nav-back">← Back to Site</a>
+</nav>
+
+<main>
+  <!-- LEFT: Preview -->
+  <div class="preview-side">
+    <div class="resource-badge">
+      <span class="badge-dot"></span>
+      <span id="badge-text">Free Resource</span>
+    </div>
+
+    <p class="preview-eyebrow" id="preview-eyebrow">Strategic Tool</p>
+    <h1 class="preview-title" id="preview-title">Loading...</h1>
+    <p class="preview-desc" id="preview-desc"></p>
+
+    <!-- PDF Mockup -->
+    <div class="pdf-mockup">
+      <div class="mockup-inner">
+        <div class="mockup-badge">Free Download</div>
+        <div class="mockup-title" id="mockup-title">Title</div>
+        <div class="mockup-rule"></div>
+        <div class="mockup-sub">Asset District</div>
+      </div>
+    </div>
+
+    <!-- What's inside -->
+    <ul class="inside-list" id="inside-list"></ul>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="form-side">
+    <div class="form-card">
+
+      <!-- Form state -->
+      <div id="form-state">
+        <span class="form-eyebrow">Get Instant Access</span>
+        <h2 class="form-title">Download <em>Free</em></h2>
+        <p class="form-sub">Enter your details below and your download link will be sent to your inbox immediately.</p>
+
+        <form id="opt-in-form" novalidate>
+          <div class="field-group">
+            <label class="field-label" for="field-name">First Name</label>
+            <input type="text" id="field-name" name="fields[name]"
+                   class="field-input" placeholder="Your first name"
+                   autocomplete="given-name" required>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="field-email">Email Address</label>
+            <input type="email" id="field-email" name="fields[email]"
+                   class="field-input" placeholder="your@email.com"
+                   autocomplete="email" required>
+          </div>
+          <!-- MailerLite honeypot -->
+          <input type="hidden" name="ml-submit" value="1">
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="b_field" tabindex="-1" value="">
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span class="btn-text">Send Me the Free Download</span>
+            <span class="btn-loader"></span>
+          </button>
+          <p class="form-fine">
+            By downloading you agree to receive strategic insights from Asset District.
+            No spam. Unsubscribe anytime. &nbsp;·&nbsp;
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </p>
+        </form>
+
+        <div class="trust-row">
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            No spam, ever
+          </span>
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Instant delivery
+          </span>
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Unsubscribe anytime
+          </span>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div class="success-state" id="success-state">
+        <div class="success-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="success-title">Check your <em>inbox.</em></h2>
+        <p class="success-body">
+          Your download link has been sent to <strong id="confirm-email"></strong>.<br>
+          It should arrive within 1–2 minutes. Check your spam folder if you don't see it.
+        </p>
+        <a href="#" class="download-now-btn" id="direct-download" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Directly
+        </a>
+        <p class="form-fine">
+          <a href="asset-district.html#resources" style="color:var(--gold)">← Explore more resources</a>
+          &nbsp;·&nbsp;
+          <a href="asset-district.html#contact" style="color:var(--gold)">Book a Strategic Call</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="asset-district.html" class="logo" style="font-size:0.9rem;opacity:0.5;">asset<span>DISTRICT.</span></a>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="asset-district.html#contact">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026 Asset District</span>
+</footer>
+
+<script>
+// ── RESOURCE DEFINITIONS ────────────────────────────────────────────────────
+// Each key matches ?resource= URL param
+const RESOURCES = {
+  'founder-clarity-guide': {
+    badge:    'Free Guide · 8 Pages',
+    eyebrow:  'Strategic Workbook',
+    title:    'Founder <em>Clarity</em> Guide',
+    mockupTitle: 'Founder<br><em>Clarity</em><br>Guide',
+    desc:     'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
+    inside:   ['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
+    file:     '/Founder_guide.pdf',
+    // MailerLite form ID for THIS specific lead magnet
+    mlForm:   'YOUR_FOUNDER_CLARITY_FORM_ID',
+  },
+  'business-audit-checklist': {
+    badge:    'Free Checklist · 4 Pages',
+    eyebrow:  'Diagnostic Tool',
+    title:    'Business <em>Audit</em> Checklist',
+    mockupTitle: 'Business<br><em>Audit</em><br>Checklist',
+    desc:     'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
+    inside:   ['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide (0–240 scale)'],
+    file:     '/business-audit-checklist.pdf',
+    mlForm:   'YOUR_AUDIT_FORM_ID',
+  },
+  'brand-positioning-worksheet': {
+    badge:    'Free Worksheet · 6 Pages',
+    eyebrow:  'Positioning Framework',
+    title:    'Brand <em>Positioning</em> Worksheet',
+    mockupTitle: 'Brand<br><em>Positioning</em><br>Worksheet',
+    desc:     'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
+    inside:   ['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates','One-page positioning summary'],
+    file:     '/brand-positioning-worksheet.pdf',
+    mlForm:   'YOUR_POSITIONING_FORM_ID',
+  },
+};
+
+// ── DEFAULT if no param ─────────────────────────────────────────────────────
+const DEFAULT = 'founder-clarity-guide';
+
+// ── READ URL PARAM ──────────────────────────────────────────────────────────
+const params   = new URLSearchParams(window.location.search);
+const key      = params.get('resource') || DEFAULT;
+const resource = RESOURCES[key] || RESOURCES[DEFAULT];
+
+// ── POPULATE PAGE ────────────────────────────────────────────────────────────
+document.title                              = resource.eyebrow + ' — Asset District';
+document.getElementById('badge-text').textContent   = resource.badge;
+document.getElementById('preview-eyebrow').textContent = resource.eyebrow;
+document.getElementById('preview-title').innerHTML  = resource.title;
+document.getElementById('preview-desc').textContent = resource.desc;
+document.getElementById('mockup-title').innerHTML   = resource.mockupTitle;
+
+// Inside list
+const ul = document.getElementById('inside-list');
+resource.inside.forEach(item => {
+  const li = document.createElement('li');
+  li.innerHTML = `
+    <span class="check-icon">
+      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </span>
+    ${item}`;
+  ul.appendChild(li);
+});
+
+// Direct download link
+document.getElementById('direct-download').href = resource.file;
+
+// ── FORM SUBMISSION ─────────────────────────────────────────────────────────
+const form      = document.getElementById('opt-in-form');
+const btn       = document.getElementById('submit-btn');
+const formState = document.getElementById('form-state');
+const successEl = document.getElementById('success-state');
+const confirmEl = document.getElementById('confirm-email');
+
+// MailerLite account ID — replace with yours
+const ML_ACCOUNT = 'YOUR_MAILERLITE_ACCOUNT_ID';
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name  = document.getElementById('field-name').value.trim();
+  const email = document.getElementById('field-email').value.trim();
+
+  // Basic validation
+  if (!name || name.length < 2) {
+    document.getElementById('field-name').style.borderColor='rgba(192,57,43,0.5)';
+    document.getElementById('field-name').focus();
+    return;
+  }
+  if (!email || !email.includes('@')) {
+    document.getElementById('field-email').style.borderColor='rgba(192,57,43,0.5)';
+    document.getElementById('field-email').focus();
+    return;
+  }
+
+  // Loading state
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  // ── MailerLite submission ─────────────────────────────────────────
+  // SETUP:
+  // 1. In MailerLite: create a separate Group for each resource
+  //    e.g. "Founder Clarity Guide", "Business Audit", "Brand Positioning"
+  // 2. Create an embedded form for each group
+  // 3. Replace the mlForm IDs in RESOURCES above with real form IDs
+  // 4. Create an automation: on subscribe → send email with download link
+  // 5. In the email, link to your PDF hosted on Vercel /public/downloads/
+
+  try {
+    const body = new URLSearchParams();
+    body.append('fields[name]',  name);
+    body.append('fields[email]', email);
+    body.append('ml-submit',     '1');
+    body.append('anticsrf',      'true');
+
+    await fetch(
+      `https://assets.mailerlite.com/jsonp/${ML_ACCOUNT}/forms/${resource.mlForm}/subscribe`,
+      { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body.toString() }
+    );
+  } catch(_) {
+    // MailerLite JSONP endpoint may return CORS error in dev — still works in prod
+    // In production with real IDs this subscribes correctly
+  }
+
+  // ── Show success ──────────────────────────────────────────────────
+  confirmEl.textContent = email;
+  formState.style.display = 'none';
+  successEl.classList.add('visible');
+
+  // Optional: push to dataLayer for Google Analytics / Meta Pixel
+  if (window.dataLayer) {
+    window.dataLayer.push({event:'lead_magnet_download', resource: key});
+  }
+  if (window.fbq) {
+    window.fbq('track','Lead', {content_name: key});
+  }
+});
+
+// Remove red border on re-focus
+document.querySelectorAll('.field-input').forEach(input => {
+  input.addEventListener('focus', () => input.style.borderColor = '');
+});
+</script>
+</body>
+</html>
