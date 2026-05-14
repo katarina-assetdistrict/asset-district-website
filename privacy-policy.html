@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Asset District</title>
+  <meta name="description" content="Privacy Policy for Asset District — Business Development & Growth Consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a08;
+      --surface: #111110;
+      --border: #1e1e1b;
+      --gold: #c9a96e;
+      --gold-light: #e2c99a;
+      --text: #d4d0c8;
+      --text-muted: #7a7770;
+      --white: #f5f2ec;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,8,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-link {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      padding: 14rem 4rem 5rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 4rem 8rem;
+    }
+
+    .section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-number {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .section ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.5rem;
+      top: 0.7rem;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      width: 100%;
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .hero { padding: 10rem 1.5rem 4rem; }
+      .content { padding: 3rem 1.5rem 5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.assetdistrict.com/#home" class="nav-logo">asset<span>DISTRICT</span>.</a>
+    <a href="https://www.assetdistrict.com/#home" class="nav-link">← Back to Site</a>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-label">Legal</span>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="hero-meta">Last updated: May 2026 &nbsp;·&nbsp; Asset District</p>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <span class="section-number">01</span>
+      <h2>Overview</h2>
+      <p>Asset District ("we", "our", or "us"), founded by Katarina Raskovic and operating from Dubai, United Arab Emirates, is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit <a href="https://www.assetdistrict.com">assetdistrict.com</a> or engage with our consulting services and digital products.</p>
+      <p>By using our website or purchasing our products and services, you agree to the practices described in this policy.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">02</span>
+      <h2>Information We Collect</h2>
+      <p>We collect information you voluntarily provide to us, including:</p>
+      <ul>
+        <li>Name and email address when you subscribe to our newsletter or join the District community</li>
+        <li>Contact information submitted through our contact form or booking system</li>
+        <li>Payment information processed securely through Lemon Squeezy (we do not store payment card details)</li>
+        <li>Information shared during consulting sessions or strategic calls</li>
+      </ul>
+      <p>We may also collect non-personal data such as browser type, pages visited, and time spent on our site through standard analytics tools.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">03</span>
+      <h2>How We Use Your Information</h2>
+      <p>Your information is used exclusively to:</p>
+      <ul>
+        <li>Deliver the consulting services, digital products, or resources you have requested</li>
+        <li>Send you weekly strategic insights and newsletter content (only if you have subscribed)</li>
+        <li>Respond to your inquiries and support requests</li>
+        <li>Send you updates relevant to your purchase or engagement</li>
+        <li>Improve our website and service offerings</li>
+      </ul>
+      <p>We will never sell, rent, or trade your personal information to third parties.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">04</span>
+      <h2>Third-Party Services</h2>
+      <p>We work with trusted third-party platforms to operate our business. These may include:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Lemon Squeezy</strong> — for processing payments on digital product purchases</li>
+        <li><strong style="color:var(--white)">Google Calendar</strong> — for booking strategic calls</li>
+        <li><strong style="color:var(--white)">Email service providers</strong> — for delivering newsletter content</li>
+        <li><strong style="color:var(--white)">Analytics tools</strong> — for understanding website traffic and behavior</li>
+      </ul>
+      <p>Each of these services has its own privacy policy and data handling practices. We encourage you to review them directly.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">05</span>
+      <h2>Cookies</h2>
+      <p>Our website may use cookies to enhance your browsing experience and analyze site traffic. You can control cookie settings through your browser. Disabling cookies may affect some functionality of the site.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">06</span>
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate information</li>
+        <li>Request deletion of your personal data</li>
+        <li>Unsubscribe from our newsletter at any time via the unsubscribe link in any email</li>
+        <li>Withdraw consent for data processing at any time</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a>.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">07</span>
+      <h2>Data Security</h2>
+      <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of internet transmission is 100% secure, and we cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">08</span>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">09</span>
+      <h2>Contact</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      <p><strong style="color:var(--white)">Asset District</strong><br />
+      Founded by Katarina Raskovic<br />
+      Dubai, United Arab Emirates<br />
+      <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="https://www.assetdistrict.com/#home" class="footer-logo">asset<span>DISTRICT</span>.</a>
+    <div class="footer-links">
+      <a href="https://www.assetdistrict.com/privacy-policy.html">Privacy Policy</a>
+      <a href="https://www.assetdistrict.com/terms.html">Terms & Conditions</a>
+      <a href="https://www.assetdistrict.com/refund-policy.html">Refund Policy</a>
+    </div>
+    <p class="footer-copy">© 2026 Asset District. Founded by Katarina Raskovic. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

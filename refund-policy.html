@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy — Asset District</title>
+  <meta name="description" content="Refund Policy for Asset District — Business Development & Growth Consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a08;
+      --surface: #111110;
+      --border: #1e1e1b;
+      --gold: #c9a96e;
+      --gold-light: #e2c99a;
+      --text: #d4d0c8;
+      --text-muted: #7a7770;
+      --white: #f5f2ec;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,8,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-link {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover { color: var(--gold); }
+
+    .hero {
+      padding: 14rem 4rem 5rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* Highlight box */
+    .policy-highlight {
+      background: #111110;
+      border: 1px solid var(--gold);
+      border-left: 3px solid var(--gold);
+      padding: 2rem 2.5rem;
+      margin: 0 auto 4rem;
+      max-width: 900px;
+      margin-left: 4rem;
+      margin-right: 4rem;
+      margin-top: 4rem;
+    }
+
+    .policy-highlight p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      line-height: 1.6;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 4rem 8rem;
+    }
+
+    .section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-number {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .section ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.5rem;
+      top: 0.7rem;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      width: 100%;
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .hero { padding: 10rem 1.5rem 4rem; }
+      .policy-highlight { margin: 2rem 1.5rem; }
+      .content { padding: 1rem 1.5rem 5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.assetdistrict.com/#home" class="nav-logo">asset<span>DISTRICT</span>.</a>
+    <a href="https://www.assetdistrict.com/#home" class="nav-link">← Back to Site</a>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-label">Legal</span>
+    <h1>Refund <em>Policy</em></h1>
+    <p class="hero-meta">Last updated: May 2026 &nbsp;·&nbsp; Asset District</p>
+  </div>
+
+  <div class="policy-highlight">
+    <p>All sales at Asset District are final. Due to the digital and service-based nature of our offerings, we do not offer refunds. Please read this policy carefully before making a purchase.</p>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <span class="section-number">01</span>
+      <h2>No Refund Policy</h2>
+      <p>Asset District operates a strict no-refund policy across all products and services. This applies to:</p>
+      <ul>
+        <li>All digital products (toolkits, templates, planners, frameworks, and any downloadable content)</li>
+        <li>Strategic Intensive sessions and all consulting calls</li>
+        <li>Private Consulting engagements and retainer arrangements</li>
+        <li>Any other services provided by Asset District</li>
+      </ul>
+      <p>By completing a purchase or booking, you acknowledge and accept this no-refund policy.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">02</span>
+      <h2>Why We Don't Offer Refunds</h2>
+      <p>Our no-refund policy exists for the following reasons:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Digital products</strong> are delivered immediately upon purchase and cannot be "returned" — once accessed, the value has been transferred</li>
+        <li><strong style="color:var(--white)">Consulting sessions and strategic calls</strong> represent dedicated time, preparation, and expertise that cannot be reclaimed once delivered</li>
+        <li><strong style="color:var(--white)">All service descriptions</strong> are clearly outlined before purchase so you can make an informed decision</li>
+      </ul>
+      <p>We encourage you to review all product and service descriptions thoroughly before purchasing and to reach out with any questions beforehand.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">03</span>
+      <h2>Before You Purchase</h2>
+      <p>We want every client to feel confident before committing. If you have questions about whether a service or product is right for you, please contact us at <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a> before purchasing. We are happy to provide additional information to help you make the right decision.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">04</span>
+      <h2>Session Cancellation & Rescheduling</h2>
+      <p>If you have booked a strategic call or consulting session and need to reschedule, please contact us at least 24 hours in advance. We will do our best to accommodate a reschedule, subject to availability.</p>
+      <p>No-shows or cancellations made less than 24 hours before the scheduled session will be considered forfeited without refund or reschedule.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">05</span>
+      <h2>Exceptional Circumstances</h2>
+      <p>In rare cases of documented technical failure preventing access to a digital product (e.g., a broken download link), please contact us at <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a> within 48 hours of purchase. We will resolve the issue by providing access to your purchased product. This does not constitute a refund and is strictly limited to access-related technical failures.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">06</span>
+      <h2>Payment Processing</h2>
+      <p>All digital product purchases are processed through Lemon Squeezy. If you believe there has been an unauthorized transaction on your account, please contact your payment provider directly and notify us at <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a>.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">07</span>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this policy prior to making a purchase, we encourage you to get in touch:</p>
+      <p><strong style="color:var(--white)">Asset District</strong><br />
+      Founded by Katarina Raskovic<br />
+      Dubai, United Arab Emirates<br />
+      <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="https://www.assetdistrict.com/#home" class="footer-logo">asset<span>DISTRICT</span>.</a>
+    <div class="footer-links">
+      <a href="https://www.assetdistrict.com/privacy-policy.html">Privacy Policy</a>
+      <a href="https://www.assetdistrict.com/terms.html">Terms & Conditions</a>
+      <a href="https://www.assetdistrict.com/refund-policy.html">Refund Policy</a>
+    </div>
+    <p class="footer-copy">© 2026 Asset District. Founded by Katarina Raskovic. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

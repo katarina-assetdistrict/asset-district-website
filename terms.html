@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — Asset District</title>
+  <meta name="description" content="Terms and Conditions for Asset District — Business Development & Growth Consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a08;
+      --surface: #111110;
+      --border: #1e1e1b;
+      --gold: #c9a96e;
+      --gold-light: #e2c99a;
+      --text: #d4d0c8;
+      --text-muted: #7a7770;
+      --white: #f5f2ec;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,8,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-link {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover { color: var(--gold); }
+
+    .hero {
+      padding: 14rem 4rem 5rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 4rem 8rem;
+    }
+
+    .section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-number {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .section ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.5rem;
+      top: 0.7rem;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      width: 100%;
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .hero { padding: 10rem 1.5rem 4rem; }
+      .content { padding: 3rem 1.5rem 5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.assetdistrict.com/#home" class="nav-logo">asset<span>DISTRICT</span>.</a>
+    <a href="https://www.assetdistrict.com/#home" class="nav-link">← Back to Site</a>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-label">Legal</span>
+    <h1>Terms & <em>Conditions</em></h1>
+    <p class="hero-meta">Last updated: May 2026 &nbsp;·&nbsp; Asset District</p>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <span class="section-number">01</span>
+      <h2>Agreement to Terms</h2>
+      <p>By accessing <a href="https://www.assetdistrict.com">assetdistrict.com</a> or purchasing any product or service from Asset District, you agree to be bound by these Terms & Conditions. These terms apply to all visitors, clients, and users of our website and services.</p>
+      <p>Asset District is founded and operated by Katarina Raskovic, based in Dubai, United Arab Emirates.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">02</span>
+      <h2>Services Offered</h2>
+      <p>Asset District provides business development, brand strategy, and growth consulting services, including but not limited to:</p>
+      <ul>
+        <li>Strategic Intensive sessions (90-minute consulting calls)</li>
+        <li>Business Development Consulting</li>
+        <li>Brand & Positioning Strategy</li>
+        <li>Digital Systems and operational consulting</li>
+        <li>Private Consulting engagements</li>
+        <li>Digital products (templates, toolkits, planners, and frameworks)</li>
+        <li>Free resources and educational content</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <span class="section-number">03</span>
+      <h2>Consulting Services</h2>
+      <p>Our consulting services are delivered via video call, written communication, or other agreed formats. By booking a service:</p>
+      <ul>
+        <li>You acknowledge that consulting advice is based on information provided by you and general business expertise</li>
+        <li>Results are not guaranteed — outcomes depend on your own implementation, market conditions, and individual circumstances</li>
+        <li>Asset District is not liable for business decisions made based on consulting advice</li>
+        <li>All consulting content is confidential and intended solely for the client</li>
+        <li>Sessions are not to be recorded without prior written consent from Asset District</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <span class="section-number">04</span>
+      <h2>Digital Products</h2>
+      <p>All digital products sold through Asset District are delivered electronically via Lemon Squeezy upon successful payment. By purchasing a digital product, you agree that:</p>
+      <ul>
+        <li>The product is for your personal or business use only</li>
+        <li>You may not redistribute, resell, copy, or share the product without written permission</li>
+        <li>Unauthorized reproduction or distribution is a violation of these terms and applicable copyright law</li>
+        <li>Asset District retains all intellectual property rights to its products and content</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <span class="section-number">05</span>
+      <h2>Intellectual Property</h2>
+      <p>All content published on assetdistrict.com — including text, graphics, logos, frameworks, articles, and digital products — is the intellectual property of Asset District and Katarina Raskovic. You may not reproduce, distribute, or create derivative works without explicit written consent.</p>
+      <p>Any free resources provided are for personal use only and may not be resold or redistributed.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">06</span>
+      <h2>Payment & Billing</h2>
+      <p>Payments for digital products are processed securely through Lemon Squeezy. Consulting services may be invoiced separately. All prices are displayed in USD unless otherwise stated. By completing a purchase, you confirm that the payment information provided is accurate and that you are authorized to use the payment method.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">07</span>
+      <h2>Disclaimer of Warranties</h2>
+      <p>Asset District's services and digital products are provided on an "as is" basis. We make no guarantees regarding specific business outcomes, revenue growth, or results. All strategies and advice are based on general expertise and information provided by the client.</p>
+      <p>We are not responsible for any loss, damage, or consequences arising from the application of our advice or use of our products.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">08</span>
+      <h2>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Asset District and Katarina Raskovic shall not be liable for any indirect, incidental, consequential, or punitive damages arising from your use of our website, products, or services.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">09</span>
+      <h2>Governing Law</h2>
+      <p>These Terms & Conditions are governed by the laws of the United Arab Emirates. Any disputes arising from these terms shall be subject to the jurisdiction of the courts of Dubai, UAE.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">10</span>
+      <h2>Changes to Terms</h2>
+      <p>Asset District reserves the right to update these Terms & Conditions at any time. Changes will be posted on this page with an updated date. Continued use of our website or services after changes constitutes acceptance of the updated terms.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-number">11</span>
+      <h2>Contact</h2>
+      <p>For questions regarding these Terms & Conditions:</p>
+      <p><strong style="color:var(--white)">Asset District</strong><br />
+      Founded by Katarina Raskovic<br />
+      Dubai, United Arab Emirates<br />
+      <a href="mailto:hello@assetdistrict.com">hello@assetdistrict.com</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="https://www.assetdistrict.com/#home" class="footer-logo">asset<span>DISTRICT</span>.</a>
+    <div class="footer-links">
+      <a href="https://www.assetdistrict.com/privacy-policy.html">Privacy Policy</a>
+      <a href="https://www.assetdistrict.com/terms.html">Terms & Conditions</a>
+      <a href="https://www.assetdistrict.com/refund-policy.html">Refund Policy</a>
+    </div>
+    <p class="footer-copy">© 2026 Asset District. Founded by Katarina Raskovic. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
