@@ -316,7 +316,6 @@ main{
 }
 .download-now-btn:hover{background:var(--gold);transform:translateY(-2px);}
 
-/* Divider between trust badges */
 .trust-row{
   display:flex;align-items:center;gap:1.5rem;
   margin-top:2rem;padding-top:2rem;
@@ -362,23 +361,19 @@ footer{
 <body>
 
 <nav>
-  <a href="asset-district.html" class="logo">asset<span>DISTRICT.</span></a>
-  <a href="asset-district.html" class="nav-back">← Back to Site</a>
+  <a href="/" class="logo">asset<span>DISTRICT.</span></a>
+  <a href="/" class="nav-back">← Back to Site</a>
 </nav>
 
 <main>
-  <!-- LEFT: Preview -->
   <div class="preview-side">
     <div class="resource-badge">
       <span class="badge-dot"></span>
       <span id="badge-text">Free Resource</span>
     </div>
-
     <p class="preview-eyebrow" id="preview-eyebrow">Strategic Tool</p>
     <h1 class="preview-title" id="preview-title">Loading...</h1>
     <p class="preview-desc" id="preview-desc"></p>
-
-    <!-- PDF Mockup -->
     <div class="pdf-mockup">
       <div class="mockup-inner">
         <div class="mockup-badge">Free Download</div>
@@ -387,20 +382,16 @@ footer{
         <div class="mockup-sub">Asset District</div>
       </div>
     </div>
-
-    <!-- What's inside -->
     <ul class="inside-list" id="inside-list"></ul>
   </div>
 
-  <!-- RIGHT: Form -->
   <div class="form-side">
     <div class="form-card">
 
-      <!-- Form state -->
       <div id="form-state">
         <span class="form-eyebrow">Get Instant Access</span>
         <h2 class="form-title">Download <em>Free</em></h2>
-        <p class="form-sub">Enter your details below and your download link will be sent to your inbox immediately.</p>
+        <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
 
         <form id="opt-in-form" novalidate>
           <div class="field-group">
@@ -415,7 +406,6 @@ footer{
                    class="field-input" placeholder="your@email.com"
                    autocomplete="email" required>
           </div>
-          <!-- MailerLite honeypot -->
           <input type="hidden" name="ml-submit" value="1">
           <div style="display:none" aria-hidden="true">
             <input type="text" name="b_field" tabindex="-1" value="">
@@ -425,9 +415,8 @@ footer{
             <span class="btn-loader"></span>
           </button>
           <p class="form-fine">
-            By downloading you agree to receive strategic insights from Asset District.
             No spam. Unsubscribe anytime. &nbsp;·&nbsp;
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
           </p>
         </form>
 
@@ -447,7 +436,6 @@ footer{
         </div>
       </div>
 
-      <!-- Success state -->
       <div class="success-state" id="success-state">
         <div class="success-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -462,9 +450,9 @@ footer{
           Download Directly
         </a>
         <p class="form-fine">
-          <a href="asset-district.html#resources" style="color:var(--gold)">← Explore more resources</a>
+          <a href="/#resources" style="color:var(--gold)">← Explore more resources</a>
           &nbsp;·&nbsp;
-          <a href="asset-district.html#contact" style="color:var(--gold)">Book a Strategic Call</a>
+          <a href="/#contact" style="color:var(--gold)">Book a Strategic Call</a>
         </p>
       </div>
 
@@ -473,123 +461,96 @@ footer{
 </main>
 
 <footer>
-  <a href="asset-district.html" class="logo" style="font-size:0.9rem;opacity:0.5;">asset<span>DISTRICT.</span></a>
+  <a href="/" class="logo" style="font-size:0.9rem;opacity:0.5;">asset<span>DISTRICT.</span></a>
   <div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
-    <a href="asset-district.html#contact">Contact</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/#contact">Contact</a>
   </div>
   <span class="footer-copy">© 2026 Asset District</span>
 </footer>
 
 <script>
-// ── RESOURCE DEFINITIONS ────────────────────────────────────────────────────
-// Each key matches ?resource= URL param
 const RESOURCES = {
   'founder-clarity-guide': {
-    badge:    'Free Guide · 8 Pages',
-    eyebrow:  'Strategic Workbook',
-    title:    'Founder <em>Clarity</em> Guide',
+    badge:       'Free Guide · 8 Pages',
+    eyebrow:     'Strategic Workbook',
+    title:       'Founder <em>Clarity</em> Guide',
     mockupTitle: 'Founder<br><em>Clarity</em><br>Guide',
-    desc:     'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
-    inside:   ['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
-    file:     '/Founder_guide.pdf',
-    // MailerLite form ID for THIS specific lead magnet
-    mlForm:   '187344472286168083',
+    desc:        'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
+    inside:      ['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
+    file:        'https://drive.google.com/uc?export=download&id=11IYsR_cglTzRiGqlzfmNf3-Ph80ptgKk',
+    mlForm:      '6rzHhh',
   },
   'business-audit-checklist': {
-    badge:    'Free Checklist · 4 Pages',
-    eyebrow:  'Diagnostic Tool',
-    title:    'Business <em>Audit</em> Checklist',
+    badge:       'Free Checklist · 4 Pages',
+    eyebrow:     'Diagnostic Tool',
+    title:       'Business <em>Audit</em> Checklist',
     mockupTitle: 'Business<br><em>Audit</em><br>Checklist',
-    desc:     'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
-    inside:   ['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide (0–240 scale)'],
-    file:     '/business-audit-checklist.pdf',
-    mlForm:   '187346060094473394',
+    desc:        'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
+    inside:      ['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide'],
+    file:        '/business-audit-checklist.pdf',
+    mlForm:      'Q8hXqK',
   },
   'brand-positioning-worksheet': {
-    badge:    'Free Worksheet · 6 Pages',
-    eyebrow:  'Positioning Framework',
-    title:    'Brand <em>Positioning</em> Worksheet',
+    badge:       'Free Worksheet · 6 Pages',
+    eyebrow:     'Positioning Framework',
+    title:       'Brand <em>Positioning</em> Worksheet',
     mockupTitle: 'Brand<br><em>Positioning</em><br>Worksheet',
-    desc:     'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
-    inside:   ['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates','One-page positioning summary'],
-    file:     '/brand-positioning-worksheet.pdf',
-    mlForm:   '187346353142105954',
+    desc:        'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
+    inside:      ['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates'],
+    file:        '/brand-positioning-worksheet.pdf',
+    mlForm:      'UX4Igq',
   },
 };
 
-// ── DEFAULT if no param ─────────────────────────────────────────────────────
-const DEFAULT = 'founder-clarity-guide';
-
-// ── READ URL PARAM ──────────────────────────────────────────────────────────
+const DEFAULT  = 'founder-clarity-guide';
 const params   = new URLSearchParams(window.location.search);
 const key      = params.get('resource') || DEFAULT;
 const resource = RESOURCES[key] || RESOURCES[DEFAULT];
+const ML_ACCOUNT = '2344005';
 
-// ── POPULATE PAGE ────────────────────────────────────────────────────────────
-document.title                              = resource.eyebrow + ' — Asset District';
-document.getElementById('badge-text').textContent   = resource.badge;
-document.getElementById('preview-eyebrow').textContent = resource.eyebrow;
-document.getElementById('preview-title').innerHTML  = resource.title;
-document.getElementById('preview-desc').textContent = resource.desc;
-document.getElementById('mockup-title').innerHTML   = resource.mockupTitle;
+// Populate page
+document.title = resource.eyebrow + ' — Asset District';
+document.getElementById('badge-text').textContent        = resource.badge;
+document.getElementById('preview-eyebrow').textContent   = resource.eyebrow;
+document.getElementById('preview-title').innerHTML       = resource.title;
+document.getElementById('preview-desc').textContent      = resource.desc;
+document.getElementById('mockup-title').innerHTML        = resource.mockupTitle;
+document.getElementById('direct-download').href          = resource.file;
 
-// Inside list
 const ul = document.getElementById('inside-list');
 resource.inside.forEach(item => {
   const li = document.createElement('li');
-  li.innerHTML = `
-    <span class="check-icon">
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-    </span>
-    ${item}`;
+  li.innerHTML = `<span class="check-icon"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>${item}`;
   ul.appendChild(li);
 });
 
-// Direct download link
-document.getElementById('direct-download').href = resource.file;
-
-// ── FORM SUBMISSION ─────────────────────────────────────────────────────────
+// Form submission
 const form      = document.getElementById('opt-in-form');
 const btn       = document.getElementById('submit-btn');
 const formState = document.getElementById('form-state');
 const successEl = document.getElementById('success-state');
 const confirmEl = document.getElementById('confirm-email');
 
-// MailerLite account ID — replace with yours
-const ML_ACCOUNT = '2344005';
-
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   const name  = document.getElementById('field-name').value.trim();
   const email = document.getElementById('field-email').value.trim();
 
-  // Basic validation
   if (!name || name.length < 2) {
-    document.getElementById('field-name').style.borderColor='rgba(192,57,43,0.5)';
+    document.getElementById('field-name').style.borderColor = 'rgba(192,57,43,0.5)';
     document.getElementById('field-name').focus();
     return;
   }
   if (!email || !email.includes('@')) {
-    document.getElementById('field-email').style.borderColor='rgba(192,57,43,0.5)';
+    document.getElementById('field-email').style.borderColor = 'rgba(192,57,43,0.5)';
     document.getElementById('field-email').focus();
     return;
   }
 
-  // Loading state
   btn.classList.add('loading');
   btn.disabled = true;
-
-  // ── MailerLite submission ─────────────────────────────────────────
-  // SETUP:
-  // 1. In MailerLite: create a separate Group for each resource
-  //    e.g. "Founder Clarity Guide", "Business Audit", "Brand Positioning"
-  // 2. Create an embedded form for each group
-  // 3. Replace the mlForm IDs in RESOURCES above with real form IDs
-  // 4. Create an automation: on subscribe → send email with download link
-  // 5. In the email, link to your PDF hosted on Vercel /public/downloads/
 
   try {
     const body = new URLSearchParams();
@@ -597,31 +558,17 @@ form.addEventListener('submit', async (e) => {
     body.append('fields[email]', email);
     body.append('ml-submit',     '1');
     body.append('anticsrf',      'true');
-
     await fetch(
       `https://assets.mailerlite.com/jsonp/${ML_ACCOUNT}/forms/${resource.mlForm}/subscribe`,
-      { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body.toString() }
+      { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() }
     );
-  } catch(_) {
-    // MailerLite JSONP endpoint may return CORS error in dev — still works in prod
-    // In production with real IDs this subscribes correctly
-  }
+  } catch(_) {}
 
-  // ── Show success ──────────────────────────────────────────────────
   confirmEl.textContent = email;
   formState.style.display = 'none';
   successEl.classList.add('visible');
-
-  // Optional: push to dataLayer for Google Analytics / Meta Pixel
-  if (window.dataLayer) {
-    window.dataLayer.push({event:'lead_magnet_download', resource: key});
-  }
-  if (window.fbq) {
-    window.fbq('track','Lead', {content_name: key});
-  }
 });
 
-// Remove red border on re-focus
 document.querySelectorAll('.field-input').forEach(input => {
   input.addEventListener('focus', () => input.style.borderColor = '');
 });
