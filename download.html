@@ -27,8 +27,6 @@ ml('account', '2344005');
   --text:    #1E1E1E;
   --accent:  #7A8366;
   --gold:    #B7A98E;
-  --border:  rgba(30,30,30,0.1);
-  --subtle:  rgba(30,30,30,0.45);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -75,7 +73,7 @@ main{
   min-height:calc(100vh - 64px);
 }
 
-/* ── LEFT: PREVIEW ── */
+/* ── LEFT ── */
 .preview-side{
   padding:5vw;
   display:flex;
@@ -84,7 +82,6 @@ main{
   position:relative;
   overflow:hidden;
 }
-
 .preview-side::before{
   content:'';
   position:absolute;
@@ -93,7 +90,6 @@ main{
   background:radial-gradient(ellipse,rgba(122,131,102,0.08) 0%,transparent 65%);
   pointer-events:none;
 }
-
 .resource-badge{
   display:inline-flex;align-items:center;gap:0.7rem;
   background:rgba(183,169,142,0.1);
@@ -111,13 +107,11 @@ main{
   animation:pulse 2s infinite;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
-
 .preview-eyebrow{
   font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1rem;
   opacity:0;animation:fadeUp 0.6s 0.2s ease forwards;
 }
-
 .preview-title{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(2.2rem,4vw,3.4rem);
@@ -126,7 +120,6 @@ main{
   opacity:0;animation:fadeUp 0.7s 0.35s ease forwards;
 }
 .preview-title em{font-style:italic;color:var(--gold);}
-
 .preview-desc{
   font-size:0.95rem;
   color:rgba(248,245,240,0.55);
@@ -135,10 +128,8 @@ main{
   margin-bottom:2.5rem;
   opacity:0;animation:fadeUp 0.7s 0.5s ease forwards;
 }
-
-/* PDF mockup */
 .pdf-mockup{
-  width:100%;max-width:340px;
+  width:100%;max-width:320px;
   aspect-ratio:1/1.41;
   background:linear-gradient(145deg,#1E1D1B 0%,#2A2825 100%);
   border-radius:2px;
@@ -170,14 +161,12 @@ main{
 }
 .mockup-title{
   font-family:'Cormorant Garamond',serif;
-  font-size:1.5rem;font-weight:300;line-height:1.2;
-  color:var(--bg);margin-bottom:0.5rem;
+  font-size:1.4rem;font-weight:300;line-height:1.2;
+  color:var(--bg);
 }
 .mockup-title em{font-style:italic;color:var(--gold);}
 .mockup-rule{width:40px;height:1px;background:rgba(183,169,142,0.3);margin:1rem auto;}
 .mockup-sub{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,245,240,0.3);}
-
-/* What's inside list */
 .inside-list{
   list-style:none;
   margin-top:2rem;
@@ -196,7 +185,7 @@ main{
   flex-shrink:0;color:var(--accent);
 }
 
-/* ── RIGHT: FORM ── */
+/* ── RIGHT ── */
 .form-side{
   padding:5vw;
   display:flex;
@@ -205,148 +194,122 @@ main{
   background:rgba(255,255,255,0.02);
   border-left:1px solid rgba(255,255,255,0.05);
 }
-
 .form-card{
   max-width:420px;
   width:100%;
   opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;
 }
-
 .form-eyebrow{
   font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1rem;display:block;
 }
-.form-title{
+.form-heading{
   font-family:'Cormorant Garamond',serif;
   font-size:1.7rem;font-weight:300;line-height:1.2;
   color:var(--bg);margin-bottom:0.6rem;
 }
-.form-title em{font-style:italic;color:var(--gold);}
+.form-heading em{font-style:italic;color:var(--gold);}
 .form-sub{
   font-size:0.82rem;color:rgba(248,245,240,0.45);
-  line-height:1.65;margin-bottom:2.2rem;
+  line-height:1.65;margin-bottom:2rem;
 }
 
-/* ── MailerLite form overrides ── */
-#ml-form-container .ml-form-embedWrapper {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
+/* ── MailerLite overrides ── */
+#ml-form-container .ml-form-embedWrapper{
+  background:transparent!important;border:none!important;
+  box-shadow:none!important;padding:0!important;
+  width:100%!important;max-width:100%!important;
 }
-
-#ml-form-container .ml-form-embedBody {
-  padding: 0 !important;
-  background: transparent !important;
+#ml-form-container .ml-form-embedBody{padding:0!important;background:transparent!important;}
+#ml-form-container .ml-form-embedContent{display:none!important;}
+#ml-form-container .ml-form-fieldRow{padding:0!important;margin-bottom:1.2rem!important;}
+#ml-form-container .ml-form-fieldRow input[type="text"],
+#ml-form-container .ml-form-fieldRow input[type="email"]{
+  width:100%!important;
+  background:rgba(255,255,255,0.04)!important;
+  border:1px solid rgba(255,255,255,0.1)!important;
+  border-radius:2px!important;
+  padding:0.85rem 1.1rem!important;
+  font-family:'Manrope',sans-serif!important;
+  font-size:0.88rem!important;font-weight:300!important;
+  color:#F8F5F0!important;outline:none!important;
+  transition:border-color 0.25s,box-shadow 0.25s!important;
+  -webkit-appearance:none!important;box-sizing:border-box!important;
 }
-
-#ml-form-container .ml-form-embedContent {
-  display: none !important;
+#ml-form-container .ml-form-fieldRow input::placeholder{color:rgba(248,245,240,0.2)!important;}
+#ml-form-container .ml-form-fieldRow input:focus{
+  border-color:var(--gold)!important;
+  box-shadow:0 0 0 3px rgba(183,169,142,0.08)!important;
 }
-
-#ml-form-container .ml-form-fieldRow {
-  padding: 0 !important;
-  margin-bottom: 1.2rem !important;
+#ml-form-container label{
+  display:block!important;font-size:0.62rem!important;
+  letter-spacing:0.1em!important;text-transform:uppercase!important;
+  color:rgba(248,245,240,0.4)!important;margin-bottom:0.5rem!important;
+  font-family:'Manrope',sans-serif!important;font-weight:400!important;
 }
-
-#ml-form-container .ml-form-fieldRow input {
-  width: 100% !important;
-  background: rgba(255,255,255,0.04) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  border-radius: 2px !important;
-  padding: 0.85rem 1.1rem !important;
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 300 !important;
-  color: var(--bg) !important;
-  outline: none !important;
-  transition: border-color 0.25s, box-shadow 0.25s !important;
-  -webkit-appearance: none !important;
-  box-sizing: border-box !important;
+#ml-form-container .ml-form-embedSubmit{margin-top:0.5rem!important;padding:0!important;}
+#ml-form-container .ml-form-embedSubmit button{
+  width:100%!important;background:var(--gold)!important;
+  color:var(--dark)!important;border:none!important;
+  padding:1rem 2rem!important;border-radius:100px!important;
+  font-family:'Manrope',sans-serif!important;font-size:0.72rem!important;
+  font-weight:500!important;letter-spacing:0.12em!important;
+  text-transform:uppercase!important;cursor:pointer!important;
+  transition:background 0.25s,transform 0.2s!important;
 }
-
-#ml-form-container .ml-form-fieldRow input::placeholder {
-  color: rgba(248,245,240,0.2) !important;
+#ml-form-container .ml-form-embedSubmit button:hover{
+  background:#C9BD9E!important;transform:translateY(-2px)!important;
 }
-
-#ml-form-container .ml-form-fieldRow input:focus {
-  border-color: var(--gold) !important;
-  box-shadow: 0 0 0 3px rgba(183,169,142,0.08) !important;
-}
-
-#ml-form-container .ml-form-fieldRow label,
-#ml-form-container label {
-  display: block !important;
-  font-size: 0.62rem !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  color: rgba(248,245,240,0.4) !important;
-  margin-bottom: 0.5rem !important;
-  font-family: 'Manrope', sans-serif !important;
-  font-weight: 400 !important;
-}
-
-#ml-form-container .ml-form-embedSubmit {
-  margin-top: 0.5rem !important;
-  padding: 0 !important;
-}
-
-#ml-form-container .ml-form-embedSubmit button {
-  width: 100% !important;
-  background: var(--gold) !important;
-  color: var(--dark) !important;
-  border: none !important;
-  padding: 1rem 2rem !important;
-  border-radius: 100px !important;
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 0.72rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  cursor: pointer !important;
-  transition: background 0.25s, transform 0.2s !important;
-}
-
-#ml-form-container .ml-form-embedSubmit button:hover {
-  background: #C9BD9E !important;
-  transform: translateY(-2px) !important;
-}
-
-#ml-form-container .ml-form-successBody {
-  background: transparent !important;
-  padding: 0 !important;
-}
-
-#ml-form-container .ml-form-successContent {
-  background: transparent !important;
-  padding: 2rem 0 !important;
-  text-align: center !important;
-}
-
-#ml-form-container .ml-form-successContent h4 {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 1.8rem !important;
-  font-weight: 300 !important;
-  color: var(--bg) !important;
-  margin-bottom: 0.8rem !important;
-}
-
-#ml-form-container .ml-form-successContent p {
-  font-size: 0.85rem !important;
-  color: rgba(248,245,240,0.5) !important;
-  line-height: 1.7 !important;
-  font-family: 'Manrope', sans-serif !important;
-}
-
-/* Hide MailerLite branding */
-#ml-form-container .ml-form-embedPermissions,
+#ml-form-container .ml-form-successBody{display:none!important;}
 #ml-form-container .ml-form-recaptcha,
 #ml-form-container .ml-form-checkboxRow,
-#ml-form-container p.ml-gdpr-text {
-  display: none !important;
+#ml-form-container p.ml-gdpr-text{display:none!important;}
+
+/* ── SUCCESS STATE ── */
+#success-state{display:none;}
+#success-state.visible{display:block;animation:fadeUp 0.6s ease forwards;}
+
+.success-icon-wrap{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;color:white;
 }
+.success-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:300;
+  color:var(--bg);margin-bottom:0.8rem;text-align:center;
+}
+.success-heading em{font-style:italic;color:var(--gold);}
+.success-body{
+  font-size:0.88rem;color:rgba(248,245,240,0.55);
+  line-height:1.75;text-align:center;margin-bottom:1.8rem;
+}
+.spam-notice{
+  background:rgba(183,169,142,0.08);
+  border:1px solid rgba(183,169,142,0.2);
+  border-radius:4px;
+  padding:1.2rem 1.4rem;
+  margin-bottom:1.5rem;
+}
+.spam-notice-title{
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.8rem;font-weight:500;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.spam-notice ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.spam-notice ul li{
+  font-size:0.78rem;color:rgba(248,245,240,0.5);
+  display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5;
+}
+.spam-notice ul li::before{
+  content:'→';color:var(--gold);font-size:0.7rem;flex-shrink:0;margin-top:0.1rem;
+}
+.success-links{
+  text-align:center;font-size:0.65rem;color:rgba(248,245,240,0.25);margin-top:1.2rem;
+}
+.success-links a{color:var(--gold);text-decoration:none;}
+.success-links a:hover{opacity:0.7;}
 
 .trust-row{
   display:flex;align-items:center;gap:1.5rem;
@@ -355,14 +318,11 @@ main{
 }
 .trust-item{
   font-size:0.65rem;letter-spacing:0.06em;
-  color:rgba(248,245,240,0.25);
-  display:flex;align-items:center;gap:0.5rem;
+  color:rgba(248,245,240,0.25);display:flex;align-items:center;gap:0.5rem;
 }
-
 .form-fine{
   font-size:0.62rem;color:rgba(248,245,240,0.25);
   text-align:center;margin-top:1rem;line-height:1.6;
-  letter-spacing:0.02em;
 }
 .form-fine a{color:var(--gold);text-decoration:none;}
 
@@ -370,8 +330,7 @@ main{
 footer{
   padding:1.5rem 5vw;
   border-top:1px solid rgba(255,255,255,0.05);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
 }
 .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
 .footer-links a{
@@ -381,11 +340,9 @@ footer{
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:0.62rem;color:rgba(248,245,240,0.15);}
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-/* ── RESPONSIVE ── */
 @media(max-width:860px){
   main{grid-template-columns:1fr;}
   .preview-side{padding:4rem 6vw 2rem;border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -416,7 +373,7 @@ footer{
     <div class="pdf-mockup">
       <div class="mockup-inner">
         <div class="mockup-badge">Free Download</div>
-        <div class="mockup-title" id="mockup-title">Title</div>
+        <div class="mockup-title" id="mockup-title"></div>
         <div class="mockup-rule"></div>
         <div class="mockup-sub">Asset District</div>
       </div>
@@ -426,32 +383,61 @@ footer{
 
   <div class="form-side">
     <div class="form-card">
-      <span class="form-eyebrow">Get Instant Access</span>
-      <h2 class="form-title">Download <em>Free</em></h2>
-      <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
 
-      <!-- MailerLite embedded form renders here -->
-      <div id="ml-form-container"></div>
-
-      <p class="form-fine">
-        No spam. Unsubscribe anytime. &nbsp;·&nbsp;
-        <a href="/privacy-policy.html">Privacy Policy</a>
-      </p>
-
-      <div class="trust-row">
-        <span class="trust-item">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          No spam, ever
-        </span>
-        <span class="trust-item">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Instant delivery
-        </span>
-        <span class="trust-item">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Unsubscribe anytime
-        </span>
+      <div id="form-state">
+        <span class="form-eyebrow">Get Instant Access</span>
+        <h2 class="form-heading">Download <em>Free</em></h2>
+        <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
+        <div id="ml-form-container"></div>
+        <p class="form-fine">
+          No spam. Unsubscribe anytime. &nbsp;·&nbsp;
+          <a href="/privacy-policy.html">Privacy Policy</a>
+        </p>
+        <div class="trust-row">
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            No spam, ever
+          </span>
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Instant delivery
+          </span>
+          <span class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Unsubscribe anytime
+          </span>
+        </div>
       </div>
+
+      <div id="success-state">
+        <div class="success-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="success-heading">Check your <em>inbox.</em></h2>
+        <p class="success-body">
+          Your download link is on its way to<br>
+          <strong id="confirm-email" style="color:var(--gold);"></strong><br>
+          It should arrive within 1–2 minutes.
+        </p>
+        <div class="spam-notice">
+          <div class="spam-notice-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Can't find the email? Check here:
+          </div>
+          <ul>
+            <li><strong style="color:rgba(248,245,240,0.8);">Gmail</strong> — check the <em>Promotions</em> or <em>Spam</em> tab</li>
+            <li><strong style="color:rgba(248,245,240,0.8);">Outlook / Hotmail</strong> — check your <em>Junk</em> folder</li>
+            <li><strong style="color:rgba(248,245,240,0.8);">Apple Mail</strong> — check <em>Junk</em> or <em>All Mail</em></li>
+            <li><strong style="color:rgba(248,245,240,0.8);">Any provider</strong> — search for <em>"Asset District"</em> in all folders</li>
+          </ul>
+        </div>
+        <div class="success-links">
+          <a href="/#resources">← Explore more resources</a>
+          &nbsp;·&nbsp;
+          <a href="/#contact">Book a Strategic Call</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
@@ -502,15 +488,14 @@ const params   = new URLSearchParams(window.location.search);
 const key      = params.get('resource') || DEFAULT;
 const resource = RESOURCES[key] || RESOURCES[DEFAULT];
 
-// Populate page content
+// Populate page
 document.title = resource.eyebrow + ' — Asset District';
-document.getElementById('badge-text').textContent        = resource.badge;
-document.getElementById('preview-eyebrow').textContent   = resource.eyebrow;
-document.getElementById('preview-title').innerHTML       = resource.title;
-document.getElementById('preview-desc').textContent      = resource.desc;
-document.getElementById('mockup-title').innerHTML        = resource.mockupTitle;
+document.getElementById('badge-text').textContent      = resource.badge;
+document.getElementById('preview-eyebrow').textContent = resource.eyebrow;
+document.getElementById('preview-title').innerHTML     = resource.title;
+document.getElementById('preview-desc').textContent    = resource.desc;
+document.getElementById('mockup-title').innerHTML      = resource.mockupTitle;
 
-// Build inside list
 const ul = document.getElementById('inside-list');
 resource.inside.forEach(item => {
   const li = document.createElement('li');
@@ -518,47 +503,77 @@ resource.inside.forEach(item => {
   ul.appendChild(li);
 });
 
-// Inject the correct MailerLite embedded form
+// Inject correct MailerLite form
 document.getElementById('ml-form-container').innerHTML =
   `<div class="ml-embedded" data-form="${resource.mlForm}"></div>`;
-  // Watch for MailerLite success
-window.addEventListener('message', function(event) {
-  if (event.data && event.data.type === 'ml-form-success') {
-    document.getElementById('ml-form-container').style.display = 'none';
-    document.querySelector('.form-fine').style.display = 'none';
-    document.querySelector('.trust-row').style.display = 'none';
-    document.querySelector('.form-eyebrow').style.display = 'none';
-    document.querySelector('.form-title').style.display = 'none';
-    document.querySelector('.form-sub').style.display = 'none';
 
-    const success = document.createElement('div');
-    success.innerHTML = `
-      <div style="text-align:center;padding:1rem 0;animation:fadeUp 0.6s ease forwards;">
-        <div style="width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:white;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--bg);margin-bottom:0.6rem;">Check your <em style="font-style:italic;color:var(--gold);">inbox.</em></h2>
-        <p style="font-size:0.85rem;color:rgba(248,245,240,0.5);line-height:1.7;margin-bottom:2rem;">Your download link is on its way.<br>Check your spam folder if you don't see it within 2 minutes.</p>
-        <p style="font-size:0.62rem;color:rgba(248,245,240,0.25);margin-top:1rem;">
-          <a href="/#resources" style="color:var(--gold);text-decoration:none;">← Explore more resources</a>
-          &nbsp;·&nbsp;
-          <a href="/#contact" style="color:var(--gold);text-decoration:none;">Book a Strategic Call</a>
-        </p>
-      </div>`;
-    document.getElementById('ml-form-container').after(success);
+// ── Success handler ──
+let successShown = false;
+let capturedEmail = '';
+
+function showSuccess() {
+  if (successShown) return;
+  successShown = true;
+  if (capturedEmail) {
+    document.getElementById('confirm-email').textContent = capturedEmail;
+  }
+  document.getElementById('form-state').style.display = 'none';
+  document.getElementById('success-state').classList.add('visible');
+}
+
+// Capture email on any input change
+document.addEventListener('input', (e) => {
+  if (e.target && e.target.type === 'email') {
+    capturedEmail = e.target.value;
   }
 });
 
-// Fallback: watch DOM for MailerLite success class
-const observer = new MutationObserver(function() {
-  const successBody = document.querySelector('.ml-form-successBody');
-  if (successBody && successBody.style.display !== 'none' && !document.getElementById('custom-success-shown')) {
-    document.getElementById('custom-success-shown') || document.body.setAttribute('id', 'custom-success-shown');
-    window.dispatchEvent(new MessageEvent('message', { data: { type: 'ml-form-success' } }));
+// Method 1: MutationObserver — watch for MailerLite success element becoming visible
+const observer = new MutationObserver(() => {
+  if (successShown) return;
+  const successEl = document.querySelector('.ml-form-successBody');
+  if (successEl && window.getComputedStyle(successEl).display !== 'none') {
     observer.disconnect();
+    showSuccess();
   }
 });
-observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
+observer.observe(document.body, {
+  childList: true, subtree: true,
+  attributes: true, attributeFilter: ['style', 'class']
+});
+
+// Method 2: postMessage from MailerLite iframe/widget
+window.addEventListener('message', (e) => {
+  if (successShown) return;
+  if (e.data && (
+    e.data.type === 'ml-form-success' ||
+    e.data.type === 'mlFormSuccess' ||
+    (typeof e.data === 'string' && e.data.includes('success'))
+  )) {
+    showSuccess();
+  }
+});
+
+// Method 3: Poll after submit button click (most reliable fallback)
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.ml-form-embedSubmit button');
+  if (!btn) return;
+  // Capture email at submit time
+  const emailEl = document.querySelector('#ml-form-container input[type="email"]');
+  if (emailEl && emailEl.value) capturedEmail = emailEl.value;
+
+  let attempts = 0;
+  const poll = setInterval(() => {
+    if (successShown) { clearInterval(poll); return; }
+    attempts++;
+    const successEl = document.querySelector('.ml-form-successBody');
+    if (successEl && window.getComputedStyle(successEl).display !== 'none') {
+      clearInterval(poll);
+      showSuccess();
+    }
+    if (attempts >= 20) clearInterval(poll); // stop after 10s
+  }, 500);
+});
 </script>
 
 </body>
