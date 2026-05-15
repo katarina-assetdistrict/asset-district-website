@@ -9,6 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<!-- MailerLite Universal -->
+<script>
+(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+ml('account', '2344005');
+</script>
+<!-- End MailerLite Universal -->
+
 <style>
 :root {
   --bg:      #F8F5F0;
@@ -217,104 +227,126 @@ main{
   line-height:1.65;margin-bottom:2.2rem;
 }
 
-.field-group{margin-bottom:1.2rem;}
-.field-label{
-  display:block;font-size:0.62rem;
-  letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(248,245,240,0.4);margin-bottom:0.5rem;
-}
-.field-input{
-  width:100%;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:2px;
-  padding:0.85rem 1.1rem;
-  font-family:'Manrope',sans-serif;
-  font-size:0.88rem;font-weight:300;
-  color:var(--bg);
-  outline:none;
-  transition:border-color 0.25s,box-shadow 0.25s;
-  -webkit-appearance:none;
-}
-.field-input::placeholder{color:rgba(248,245,240,0.2);}
-.field-input:focus{
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(183,169,142,0.08);
+/* ── MailerLite form overrides ── */
+#ml-form-container .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-.submit-btn{
-  width:100%;
-  background:var(--gold);
-  color:var(--dark);
-  border:none;
-  padding:1rem 2rem;
-  border-radius:100px;
-  font-family:'Manrope',sans-serif;
-  font-size:0.72rem;font-weight:500;
-  letter-spacing:0.12em;text-transform:uppercase;
-  cursor:pointer;
-  transition:background 0.25s,transform 0.2s;
-  display:flex;align-items:center;justify-content:center;gap:0.6rem;
-  margin-top:0.5rem;
-  position:relative;overflow:hidden;
+#ml-form-container .ml-form-embedBody {
+  padding: 0 !important;
+  background: transparent !important;
 }
-.submit-btn:hover:not(:disabled){background:#C9BD9E;transform:translateY(-2px);}
-.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
 
-.btn-loader{
-  display:none;
-  width:14px;height:14px;
-  border:2px solid rgba(18,17,16,0.2);
-  border-top-color:var(--dark);
-  border-radius:50%;
-  animation:spin 0.7s linear infinite;
+#ml-form-container .ml-form-embedContent {
+  display: none !important;
 }
-.submit-btn.loading .btn-loader{display:block;}
-.submit-btn.loading .btn-text{opacity:0.6;}
-@keyframes spin{to{transform:rotate(360deg);}}
 
-.form-fine{
-  font-size:0.62rem;color:rgba(248,245,240,0.25);
-  text-align:center;margin-top:1rem;line-height:1.6;
-  letter-spacing:0.02em;
+#ml-form-container .ml-form-fieldRow {
+  padding: 0 !important;
+  margin-bottom: 1.2rem !important;
 }
-.form-fine a{color:var(--gold);text-decoration:none;}
 
-/* ── SUCCESS STATE ── */
-.success-state{
-  display:none;
-  text-align:center;
-  animation:fadeUp 0.6s ease forwards;
+#ml-form-container .ml-form-fieldRow input {
+  width: 100% !important;
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 2px !important;
+  padding: 0.85rem 1.1rem !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 300 !important;
+  color: var(--bg) !important;
+  outline: none !important;
+  transition: border-color 0.25s, box-shadow 0.25s !important;
+  -webkit-appearance: none !important;
+  box-sizing: border-box !important;
 }
-.success-state.visible{display:block;}
-.success-icon{
-  width:56px;height:56px;border-radius:50%;
-  background:var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.5rem;color:white;
+
+#ml-form-container .ml-form-fieldRow input::placeholder {
+  color: rgba(248,245,240,0.2) !important;
 }
-.success-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.8rem;font-weight:300;color:var(--bg);
-  margin-bottom:0.6rem;
+
+#ml-form-container .ml-form-fieldRow input:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(183,169,142,0.08) !important;
 }
-.success-title em{font-style:italic;color:var(--gold);}
-.success-body{
-  font-size:0.85rem;color:rgba(248,245,240,0.5);
-  line-height:1.7;margin-bottom:2rem;
+
+#ml-form-container .ml-form-fieldRow label,
+#ml-form-container label {
+  display: block !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: rgba(248,245,240,0.4) !important;
+  margin-bottom: 0.5rem !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 400 !important;
 }
-.download-now-btn{
-  display:inline-flex;align-items:center;gap:0.7rem;
-  background:var(--bg);color:var(--dark);
-  text-decoration:none;
-  font-family:'Manrope',sans-serif;
-  font-size:0.72rem;font-weight:500;
-  letter-spacing:0.1em;text-transform:uppercase;
-  padding:0.9rem 1.8rem;border-radius:100px;
-  transition:background 0.25s,transform 0.2s;
-  margin-bottom:1rem;
+
+#ml-form-container .ml-form-embedSubmit {
+  margin-top: 0.5rem !important;
+  padding: 0 !important;
 }
-.download-now-btn:hover{background:var(--gold);transform:translateY(-2px);}
+
+#ml-form-container .ml-form-embedSubmit button {
+  width: 100% !important;
+  background: var(--gold) !important;
+  color: var(--dark) !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  border-radius: 100px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: background 0.25s, transform 0.2s !important;
+}
+
+#ml-form-container .ml-form-embedSubmit button:hover {
+  background: #C9BD9E !important;
+  transform: translateY(-2px) !important;
+}
+
+#ml-form-container .ml-form-successBody {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+#ml-form-container .ml-form-successContent {
+  background: transparent !important;
+  padding: 2rem 0 !important;
+  text-align: center !important;
+}
+
+#ml-form-container .ml-form-successContent h4 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.8rem !important;
+  font-weight: 300 !important;
+  color: var(--bg) !important;
+  margin-bottom: 0.8rem !important;
+}
+
+#ml-form-container .ml-form-successContent p {
+  font-size: 0.85rem !important;
+  color: rgba(248,245,240,0.5) !important;
+  line-height: 1.7 !important;
+  font-family: 'Manrope', sans-serif !important;
+}
+
+/* Hide MailerLite branding */
+#ml-form-container .ml-form-embedPermissions,
+#ml-form-container .ml-form-recaptcha,
+#ml-form-container .ml-form-checkboxRow,
+#ml-form-container p.ml-gdpr-text {
+  display: none !important;
+}
 
 .trust-row{
   display:flex;align-items:center;gap:1.5rem;
@@ -326,6 +358,13 @@ main{
   color:rgba(248,245,240,0.25);
   display:flex;align-items:center;gap:0.5rem;
 }
+
+.form-fine{
+  font-size:0.62rem;color:rgba(248,245,240,0.25);
+  text-align:center;margin-top:1rem;line-height:1.6;
+  letter-spacing:0.02em;
+}
+.form-fine a{color:var(--gold);text-decoration:none;}
 
 /* ── FOOTER ── */
 footer{
@@ -387,75 +426,32 @@ footer{
 
   <div class="form-side">
     <div class="form-card">
+      <span class="form-eyebrow">Get Instant Access</span>
+      <h2 class="form-title">Download <em>Free</em></h2>
+      <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
 
-      <div id="form-state">
-        <span class="form-eyebrow">Get Instant Access</span>
-        <h2 class="form-title">Download <em>Free</em></h2>
-        <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
+      <!-- MailerLite embedded form renders here -->
+      <div id="ml-form-container"></div>
 
-        <form id="opt-in-form" novalidate>
-          <div class="field-group">
-            <label class="field-label" for="field-name">First Name</label>
-            <input type="text" id="field-name" name="fields[name]"
-                   class="field-input" placeholder="Your first name"
-                   autocomplete="given-name" required>
-          </div>
-          <div class="field-group">
-            <label class="field-label" for="field-email">Email Address</label>
-            <input type="email" id="field-email" name="fields[email]"
-                   class="field-input" placeholder="your@email.com"
-                   autocomplete="email" required>
-          </div>
-          <input type="hidden" name="ml-submit" value="1">
-          <div style="display:none" aria-hidden="true">
-            <input type="text" name="b_field" tabindex="-1" value="">
-          </div>
-          <button type="submit" class="submit-btn" id="submit-btn">
-            <span class="btn-text">Send Me the Free Download</span>
-            <span class="btn-loader"></span>
-          </button>
-          <p class="form-fine">
-            No spam. Unsubscribe anytime. &nbsp;·&nbsp;
-            <a href="/privacy-policy.html">Privacy Policy</a>
-          </p>
-        </form>
+      <p class="form-fine">
+        No spam. Unsubscribe anytime. &nbsp;·&nbsp;
+        <a href="/privacy-policy.html">Privacy Policy</a>
+      </p>
 
-        <div class="trust-row">
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            No spam, ever
-          </span>
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Instant delivery
-          </span>
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Unsubscribe anytime
-          </span>
-        </div>
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No spam, ever
+        </span>
+        <span class="trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Instant delivery
+        </span>
+        <span class="trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Unsubscribe anytime
+        </span>
       </div>
-
-      <div class="success-state" id="success-state">
-        <div class="success-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h2 class="success-title">Check your <em>inbox.</em></h2>
-        <p class="success-body">
-          Your download link has been sent to <strong id="confirm-email"></strong>.<br>
-          It should arrive within 1–2 minutes. Check your spam folder if you don't see it.
-        </p>
-        <a href="#" class="download-now-btn" id="direct-download" download>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Directly
-        </a>
-        <p class="form-fine">
-          <a href="/#resources" style="color:var(--gold)">← Explore more resources</a>
-          &nbsp;·&nbsp;
-          <a href="/#contact" style="color:var(--gold)">Book a Strategic Call</a>
-        </p>
-      </div>
-
     </div>
   </div>
 </main>
@@ -479,7 +475,6 @@ const RESOURCES = {
     mockupTitle: 'Founder<br><em>Clarity</em><br>Guide',
     desc:        'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
     inside:      ['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
-    file:        'https://storage.googleapis.com/mailerlite-uploads-prod/d2344005/dkkuCKq8a8Mut4nm9g8GzBKp7KZQTIFu0yGdWysi.pdf',
     mlForm:      '6rzHhh',
   },
   'business-audit-checklist': {
@@ -489,7 +484,6 @@ const RESOURCES = {
     mockupTitle: 'Business<br><em>Audit</em><br>Checklist',
     desc:        'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
     inside:      ['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide'],
-    file:        'https://storage.googleapis.com/mailerlite-uploads-prod/J2344005/O9o6g4Bd4Kv96RMDJ6wlPRL2oQ25PayHFmBom9S9.pdf',
     mlForm:      'Q8hXqK',
   },
   'brand-positioning-worksheet': {
@@ -499,7 +493,6 @@ const RESOURCES = {
     mockupTitle: 'Brand<br><em>Positioning</em><br>Worksheet',
     desc:        'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
     inside:      ['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates'],
-    file:        'https://storage.googleapis.com/mailerlite-uploads-prod/Y2344005/SeVUZ3stFJb4WkBqVLvNKhqXh5HvtlZ2wYd1bMI1.pdf',
     mlForm:      'UX4Igq',
   },
 };
@@ -508,17 +501,16 @@ const DEFAULT  = 'founder-clarity-guide';
 const params   = new URLSearchParams(window.location.search);
 const key      = params.get('resource') || DEFAULT;
 const resource = RESOURCES[key] || RESOURCES[DEFAULT];
-const ML_ACCOUNT = '2344005';
 
-// Populate page
+// Populate page content
 document.title = resource.eyebrow + ' — Asset District';
 document.getElementById('badge-text').textContent        = resource.badge;
 document.getElementById('preview-eyebrow').textContent   = resource.eyebrow;
 document.getElementById('preview-title').innerHTML       = resource.title;
 document.getElementById('preview-desc').textContent      = resource.desc;
 document.getElementById('mockup-title').innerHTML        = resource.mockupTitle;
-document.getElementById('direct-download').href          = resource.file;
 
+// Build inside list
 const ul = document.getElementById('inside-list');
 resource.inside.forEach(item => {
   const li = document.createElement('li');
@@ -526,56 +518,10 @@ resource.inside.forEach(item => {
   ul.appendChild(li);
 });
 
-// Form submission
-const form      = document.getElementById('opt-in-form');
-const btn       = document.getElementById('submit-btn');
-const formState = document.getElementById('form-state');
-const successEl = document.getElementById('success-state');
-const confirmEl = document.getElementById('confirm-email');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const name  = document.getElementById('field-name').value.trim();
-  const email = document.getElementById('field-email').value.trim();
-
-  if (!name || name.length < 2) {
-    document.getElementById('field-name').style.borderColor = 'rgba(192,57,43,0.5)';
-    document.getElementById('field-name').focus();
-    return;
-  }
-  if (!email || !email.includes('@')) {
-    document.getElementById('field-email').style.borderColor = 'rgba(192,57,43,0.5)';
-    document.getElementById('field-email').focus();
-    return;
-  }
-
-  btn.classList.add('loading');
-  btn.disabled = true;
-
- try {
-    const body = new URLSearchParams();
-    body.append('fields[name]',  name);
-    body.append('fields[email]', email);
-    body.append('ml-submit',     '1');
-    body.append('anticsrf',      'true');
-    await fetch(
-      `https://assets.mailerlite.com/jsonp/${ML_ACCOUNT}/forms/${resource.mlForm}/subscribe`,
-      { 
-        method: 'POST', 
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-        body: body.toString() 
-      }
-    );
-  } catch(_) {}
-  confirmEl.textContent = email;
-  formState.style.display = 'none';
-  successEl.classList.add('visible');
-});
-
-document.querySelectorAll('.field-input').forEach(input => {
-  input.addEventListener('focus', () => input.style.borderColor = '');
-});
+// Inject the correct MailerLite embedded form
+document.getElementById('ml-form-container').innerHTML =
+  `<div class="ml-embedded" data-form="${resource.mlForm}"></div>`;
 </script>
+
 </body>
 </html>
