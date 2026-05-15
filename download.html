@@ -9,6 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<!-- MailerLite Universal -->
+<script>
+(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+ml('account', '2344005');
+</script>
+<!-- End MailerLite Universal -->
+
 <style>
 :root {
   --bg:    #F8F5F0;
@@ -47,10 +57,7 @@ nav{
 .nav-back:hover{color:var(--gold);}
 
 /* LAYOUT */
-main{
-  flex:1;display:grid;grid-template-columns:1fr 1fr;
-  min-height:calc(100vh - 64px);
-}
+main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 64px);}
 
 /* LEFT */
 .preview-side{
@@ -58,8 +65,7 @@ main{
   position:relative;overflow:hidden;
 }
 .preview-side::before{
-  content:'';position:absolute;top:-20%;left:-10%;
-  width:600px;height:600px;
+  content:'';position:absolute;top:-20%;left:-10%;width:600px;height:600px;
   background:radial-gradient(ellipse,rgba(122,131,102,0.08) 0%,transparent 65%);
   pointer-events:none;
 }
@@ -71,190 +77,125 @@ main{
   color:var(--gold);margin-bottom:2rem;width:fit-content;
   opacity:0;animation:fadeUp 0.6s 0.1s ease forwards;
 }
-.badge-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--accent);
-  animation:pulse 2s infinite;
-}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
 .preview-eyebrow{
   font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;
-  opacity:0;animation:fadeUp 0.6s 0.2s ease forwards;
+  color:var(--gold);margin-bottom:1rem;opacity:0;animation:fadeUp 0.6s 0.2s ease forwards;
 }
 .preview-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1.1;
-  color:var(--bg);margin-bottom:1.5rem;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);
+  font-weight:300;line-height:1.1;color:var(--bg);margin-bottom:1.5rem;
   opacity:0;animation:fadeUp 0.7s 0.35s ease forwards;
 }
 .preview-title em{font-style:italic;color:var(--gold);}
 .preview-desc{
   font-size:0.95rem;color:rgba(248,245,240,0.55);line-height:1.75;
-  max-width:440px;margin-bottom:2.5rem;
-  opacity:0;animation:fadeUp 0.7s 0.5s ease forwards;
+  max-width:440px;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.7s 0.5s ease forwards;
 }
 .pdf-mockup{
   width:100%;max-width:300px;aspect-ratio:1/1.41;
   background:linear-gradient(145deg,#1E1D1B 0%,#2A2825 100%);
   border-radius:2px;position:relative;overflow:hidden;
-  box-shadow:0 32px 80px rgba(0,0,0,0.5);
-  opacity:0;animation:fadeIn 0.8s 0.6s ease forwards;
+  box-shadow:0 32px 80px rgba(0,0,0,0.5);opacity:0;animation:fadeIn 0.8s 0.6s ease forwards;
 }
-.pdf-mockup::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(to right,var(--gold),transparent);
-}
-.pdf-mockup::after{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:14px;background:#151413;
-}
-.mockup-inner{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  padding:2.5rem 2.5rem 2.5rem 3rem;text-align:center;
-}
-.mockup-badge{
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);background:rgba(183,169,142,0.1);
-  border:1px solid rgba(183,169,142,0.2);border-radius:100px;
-  padding:0.3rem 0.8rem;margin-bottom:1.5rem;
-}
-.mockup-title{
-  font-family:'Cormorant Garamond',serif;font-size:1.4rem;
-  font-weight:300;line-height:1.2;color:var(--bg);
-}
+.pdf-mockup::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),transparent);}
+.pdf-mockup::after{content:'';position:absolute;left:0;top:0;bottom:0;width:14px;background:#151413;}
+.mockup-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.5rem 2.5rem 2.5rem 3rem;text-align:center;}
+.mockup-badge{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);background:rgba(183,169,142,0.1);border:1px solid rgba(183,169,142,0.2);border-radius:100px;padding:0.3rem 0.8rem;margin-bottom:1.5rem;}
+.mockup-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;line-height:1.2;color:var(--bg);}
 .mockup-title em{font-style:italic;color:var(--gold);}
 .mockup-rule{width:40px;height:1px;background:rgba(183,169,142,0.3);margin:1rem auto;}
 .mockup-sub{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,245,240,0.3);}
-.inside-list{
-  list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:0.65rem;
-  opacity:0;animation:fadeUp 0.7s 0.65s ease forwards;
-}
+.inside-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:0.65rem;opacity:0;animation:fadeUp 0.7s 0.65s ease forwards;}
 .inside-list li{display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;color:rgba(248,245,240,0.6);}
-.check-icon{
-  width:18px;height:18px;border-radius:50%;
-  background:rgba(122,131,102,0.2);border:1px solid rgba(122,131,102,0.3);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);
-}
+.check-icon{width:18px;height:18px;border-radius:50%;background:rgba(122,131,102,0.2);border:1px solid rgba(122,131,102,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);}
 
 /* RIGHT */
 .form-side{
   padding:5vw;display:flex;flex-direction:column;justify-content:center;
   background:rgba(255,255,255,0.02);border-left:1px solid rgba(255,255,255,0.05);
 }
-.form-card{
-  max-width:420px;width:100%;
-  opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;
-}
-.form-eyebrow{
-  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;display:block;
-}
-.form-heading{
-  font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;
-  line-height:1.2;color:var(--bg);margin-bottom:0.6rem;
-}
+.form-card{max-width:420px;width:100%;opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;}
+.form-eyebrow{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.form-heading{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;line-height:1.2;color:var(--bg);margin-bottom:0.6rem;}
 .form-heading em{font-style:italic;color:var(--gold);}
 .form-sub{font-size:0.82rem;color:rgba(248,245,240,0.45);line-height:1.65;margin-bottom:2rem;}
 
-/* CUSTOM FORM FIELDS */
-.field-group{margin-bottom:1.2rem;}
-.field-label{
-  display:block;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(248,245,240,0.45);margin-bottom:0.5rem;
+/* ── MailerLite embed — MINIMAL overrides, keep labels visible ── */
+#ml-form-container .ml-form-embedWrapper{
+  background:transparent!important;border:none!important;
+  box-shadow:none!important;padding:0!important;width:100%!important;max-width:100%!important;
 }
-.field-input{
-  width:100%;background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.12);border-radius:2px;
-  padding:0.9rem 1.1rem;font-family:'Manrope',sans-serif;
-  font-size:0.88rem;font-weight:300;color:#F8F5F0;
-  outline:none;transition:border-color 0.25s,box-shadow 0.25s;
-  -webkit-appearance:none;
-}
-.field-input::placeholder{color:rgba(248,245,240,0.2);}
-.field-input:focus{
-  border-color:var(--gold);box-shadow:0 0 0 3px rgba(183,169,142,0.08);
-}
+#ml-form-container .ml-form-embedBody{background:transparent!important;padding:0!important;}
 
-.submit-btn{
-  width:100%;background:var(--gold);color:var(--dark);border:none;
-  padding:1rem 2rem;border-radius:100px;font-family:'Manrope',sans-serif;
-  font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
-  cursor:pointer;transition:background 0.25s,transform 0.2s;
-  display:flex;align-items:center;justify-content:center;gap:0.6rem;
-  margin-top:0.5rem;
-}
-.submit-btn:hover:not(:disabled){background:#C9BD9E;transform:translateY(-2px);}
-.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
-.btn-loader{
-  display:none;width:14px;height:14px;
-  border:2px solid rgba(18,17,16,0.2);border-top-color:var(--dark);
-  border-radius:50%;animation:spin 0.7s linear infinite;
-}
-.submit-btn.loading .btn-loader{display:block;}
-.submit-btn.loading .btn-text{opacity:0.6;}
-@keyframes spin{to{transform:rotate(360deg);}}
+/* Hide only the title/description block inside the form, NOT labels */
+#ml-form-container .ml-form-embedContent{display:none!important;}
 
-.error-msg{
-  display:none;font-size:0.72rem;color:#e07070;margin-top:0.5rem;text-align:center;
+/* Labels */
+#ml-form-container .ml-form-fieldRow label{
+  display:block!important;
+  font-family:'Manrope',sans-serif!important;
+  font-size:0.62rem!important;letter-spacing:0.1em!important;
+  text-transform:uppercase!important;
+  color:rgba(248,245,240,0.45)!important;
+  margin-bottom:0.5rem!important;font-weight:400!important;
 }
-.form-fine{
-  font-size:0.62rem;color:rgba(248,245,240,0.25);text-align:center;margin-top:1rem;line-height:1.6;
+/* Inputs */
+#ml-form-container .ml-form-fieldRow{padding:0!important;margin-bottom:1.2rem!important;}
+#ml-form-container .ml-form-fieldRow input[type="text"],
+#ml-form-container .ml-form-fieldRow input[type="email"]{
+  width:100%!important;background:rgba(255,255,255,0.05)!important;
+  border:1px solid rgba(255,255,255,0.12)!important;border-radius:2px!important;
+  padding:0.9rem 1.1rem!important;font-family:'Manrope',sans-serif!important;
+  font-size:0.88rem!important;font-weight:300!important;color:#F8F5F0!important;
+  outline:none!important;-webkit-appearance:none!important;box-sizing:border-box!important;
 }
+#ml-form-container .ml-form-fieldRow input::placeholder{color:rgba(248,245,240,0.2)!important;}
+#ml-form-container .ml-form-fieldRow input:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(183,169,142,0.08)!important;}
+
+/* Submit button */
+#ml-form-container .ml-form-embedSubmit{padding:0!important;margin-top:0.5rem!important;}
+#ml-form-container .ml-form-embedSubmit button{
+  width:100%!important;background:var(--gold)!important;color:var(--dark)!important;
+  border:none!important;padding:1rem 2rem!important;border-radius:100px!important;
+  font-family:'Manrope',sans-serif!important;font-size:0.72rem!important;font-weight:500!important;
+  letter-spacing:0.12em!important;text-transform:uppercase!important;cursor:pointer!important;
+  transition:background 0.25s,transform 0.2s!important;
+}
+#ml-form-container .ml-form-embedSubmit button:hover{background:#C9BD9E!important;transform:translateY(-2px)!important;}
+
+/* Hide ML's own success — we show ours */
+#ml-form-container .ml-form-successBody{display:none!important;}
+#ml-form-container .ml-form-recaptcha,
+#ml-form-container .ml-form-checkboxRow,
+#ml-form-container p.ml-gdpr-text{display:none!important;}
+
+/* trust */
+.form-fine{font-size:0.62rem;color:rgba(248,245,240,0.25);text-align:center;margin-top:1rem;line-height:1.6;}
 .form-fine a{color:var(--gold);text-decoration:none;}
-.trust-row{
-  display:flex;align-items:center;gap:1.5rem;
-  margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);
-}
-.trust-item{
-  font-size:0.65rem;letter-spacing:0.06em;color:rgba(248,245,240,0.25);
-  display:flex;align-items:center;gap:0.5rem;
-}
+.trust-row{display:flex;align-items:center;gap:1.5rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);}
+.trust-item{font-size:0.65rem;letter-spacing:0.06em;color:rgba(248,245,240,0.25);display:flex;align-items:center;gap:0.5rem;}
 
 /* SUCCESS */
 #success-state{display:none;}
 #success-state.visible{display:block;animation:fadeUp 0.6s ease forwards;}
-.success-icon-wrap{
-  width:60px;height:60px;border-radius:50%;background:var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.5rem;color:white;
-}
-.success-heading{
-  font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;
-  color:var(--bg);margin-bottom:0.8rem;text-align:center;
-}
+.success-icon-wrap{width:60px;height:60px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:white;}
+.success-heading{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--bg);margin-bottom:0.8rem;text-align:center;}
 .success-heading em{font-style:italic;color:var(--gold);}
-.success-body{
-  font-size:0.88rem;color:rgba(248,245,240,0.55);
-  line-height:1.75;text-align:center;margin-bottom:1.8rem;
-}
-.spam-notice{
-  background:rgba(183,169,142,0.08);border:1px solid rgba(183,169,142,0.2);
-  border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;
-}
-.spam-notice-title{
-  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:0.8rem;font-weight:500;
-  display:flex;align-items:center;gap:0.5rem;
-}
+.success-body{font-size:0.88rem;color:rgba(248,245,240,0.55);line-height:1.75;text-align:center;margin-bottom:1.8rem;}
+.spam-notice{background:rgba(183,169,142,0.08);border:1px solid rgba(183,169,142,0.2);border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;}
+.spam-notice-title{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:500;display:flex;align-items:center;gap:0.5rem;}
 .spam-notice ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
-.spam-notice ul li{
-  font-size:0.78rem;color:rgba(248,245,240,0.5);
-  display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5;
-}
+.spam-notice ul li{font-size:0.78rem;color:rgba(248,245,240,0.5);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5;}
 .spam-notice ul li::before{content:'→';color:var(--gold);font-size:0.7rem;flex-shrink:0;margin-top:0.1rem;}
 .success-links{text-align:center;font-size:0.65rem;color:rgba(248,245,240,0.25);margin-top:1.2rem;}
 .success-links a{color:var(--gold);text-decoration:none;}
 
 /* FOOTER */
-footer{
-  padding:1.5rem 5vw;border-top:1px solid rgba(255,255,255,0.05);
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-}
+footer{padding:1.5rem 5vw;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
-.footer-links a{
-  font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
-  color:rgba(248,245,240,0.2);text-decoration:none;transition:color 0.2s;
-}
+.footer-links a{font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,245,240,0.2);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:0.62rem;color:rgba(248,245,240,0.15);}
 
@@ -280,12 +221,8 @@ footer{
 </nav>
 
 <main>
-  <!-- LEFT -->
   <div class="preview-side">
-    <div class="resource-badge">
-      <span class="badge-dot"></span>
-      <span id="badge-text">Free Resource</span>
-    </div>
+    <div class="resource-badge"><span class="badge-dot"></span><span id="badge-text">Free Resource</span></div>
     <p class="preview-eyebrow" id="preview-eyebrow">Strategic Tool</p>
     <h1 class="preview-title" id="preview-title">Loading...</h1>
     <p class="preview-desc" id="preview-desc"></p>
@@ -300,52 +237,22 @@ footer{
     <ul class="inside-list" id="inside-list"></ul>
   </div>
 
-  <!-- RIGHT -->
   <div class="form-side">
     <div class="form-card">
 
-      <!-- FORM -->
       <div id="form-state">
         <span class="form-eyebrow">Get Instant Access</span>
         <h2 class="form-heading">Download <em>Free</em></h2>
         <p class="form-sub">Enter your details and your download link will be sent to your inbox immediately.</p>
-
-        <div class="field-group">
-          <label class="field-label" for="field-name">First Name</label>
-          <input type="text" id="field-name" class="field-input" placeholder="Your first name" autocomplete="given-name" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="field-email">Email Address</label>
-          <input type="email" id="field-email" class="field-input" placeholder="your@email.com" autocomplete="email" required>
-        </div>
-
-        <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">
-          <span class="btn-text">Send Me the Free Download</span>
-          <span class="btn-loader"></span>
-        </button>
-        <p class="error-msg" id="error-msg">Something went wrong. Please try again.</p>
-
-        <p class="form-fine">
-          No spam. Unsubscribe anytime. &nbsp;·&nbsp;
-          <a href="/privacy-policy.html">Privacy Policy</a>
-        </p>
+        <div id="ml-form-container"></div>
+        <p class="form-fine">No spam. Unsubscribe anytime. &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a></p>
         <div class="trust-row">
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            No spam, ever
-          </span>
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Instant delivery
-          </span>
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Unsubscribe anytime
-          </span>
+          <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>No spam, ever</span>
+          <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Instant delivery</span>
+          <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Unsubscribe anytime</span>
         </div>
       </div>
 
-      <!-- SUCCESS -->
       <div id="success-state">
         <div class="success-icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -369,8 +276,7 @@ footer{
           </ul>
         </div>
         <div class="success-links">
-          <a href="/#resources">← Explore more resources</a>
-          &nbsp;·&nbsp;
+          <a href="/#resources">← Explore more resources</a> &nbsp;·&nbsp;
           <a href="/#contact">Book a Strategic Call</a>
         </div>
       </div>
@@ -392,31 +298,25 @@ footer{
 <script>
 const RESOURCES = {
   'founder-clarity-guide': {
-    badge:       'Free Guide · 8 Pages',
-    eyebrow:     'Strategic Workbook',
-    title:       'Founder <em>Clarity</em> Guide',
-    mockupTitle: 'Founder<br><em>Clarity</em><br>Guide',
-    desc:        'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
-    inside:      ['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
-    mlForm:      '6rzHhh',
+    badge:'Free Guide · 8 Pages', eyebrow:'Strategic Workbook',
+    title:'Founder <em>Clarity</em> Guide', mockupTitle:'Founder<br><em>Clarity</em><br>Guide',
+    desc:'Cut through the noise, get clear on your business direction, and build a 90-day action plan — in one focused session.',
+    inside:['Business reality assessment','Ideal client deep-dive','Revenue & goals framework','90-day action planner'],
+    mlForm:'6rzHhh',
   },
   'business-audit-checklist': {
-    badge:       'Free Checklist · 4 Pages',
-    eyebrow:     'Diagnostic Tool',
-    title:       'Business <em>Audit</em> Checklist',
-    mockupTitle: 'Business<br><em>Audit</em><br>Checklist',
-    desc:        'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
-    inside:      ['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide'],
-    mlForm:      'Q8hXqK',
+    badge:'Free Checklist · 4 Pages', eyebrow:'Diagnostic Tool',
+    title:'Business <em>Audit</em> Checklist', mockupTitle:'Business<br><em>Audit</em><br>Checklist',
+    desc:'Score your business across 8 critical areas — Strategy, Offer, Marketing, Sales, Operations, Finance, Brand, and Mindset.',
+    inside:['48 scored audit criteria','Section-by-section scoring table','Priority action framework','Interpretation guide'],
+    mlForm:'Q8hXqK',
   },
   'brand-positioning-worksheet': {
-    badge:       'Free Worksheet · 6 Pages',
-    eyebrow:     'Positioning Framework',
-    title:       'Brand <em>Positioning</em> Worksheet',
-    mockupTitle: 'Brand<br><em>Positioning</em><br>Worksheet',
-    desc:        'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
-    inside:      ['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates'],
-    mlForm:      'UX4Igq',
+    badge:'Free Worksheet · 6 Pages', eyebrow:'Positioning Framework',
+    title:'Brand <em>Positioning</em> Worksheet', mockupTitle:'Brand<br><em>Positioning</em><br>Worksheet',
+    desc:'Define your market position with precision — ideal client avatar, positioning statement, brand voice, and key messages.',
+    inside:['Ideal client avatar builder','Premium Positioning Triangle','Brand voice selector','5 key message templates'],
+    mlForm:'UX4Igq',
   },
 };
 
@@ -424,9 +324,7 @@ const DEFAULT  = 'founder-clarity-guide';
 const params   = new URLSearchParams(window.location.search);
 const key      = params.get('resource') || DEFAULT;
 const resource = RESOURCES[key] || RESOURCES[DEFAULT];
-const ML_ACCOUNT = '2344005';
 
-// Populate page
 document.title = resource.eyebrow + ' — Asset District';
 document.getElementById('badge-text').textContent      = resource.badge;
 document.getElementById('preview-eyebrow').textContent = resource.eyebrow;
@@ -441,59 +339,46 @@ resource.inside.forEach(item => {
   ul.appendChild(li);
 });
 
-async function handleSubmit() {
-  const nameEl  = document.getElementById('field-name');
-  const emailEl = document.getElementById('field-email');
-  const btn     = document.getElementById('submit-btn');
-  const errEl   = document.getElementById('error-msg');
+// Inject MailerLite form
+document.getElementById('ml-form-container').innerHTML =
+  `<div class="ml-embedded" data-form="${resource.mlForm}"></div>`;
 
-  const name  = nameEl.value.trim();
-  const email = emailEl.value.trim();
+// ── Show our success screen when MailerLite submits ──
+let done = false;
+let savedEmail = '';
 
-  // Validate
-  if (!name || name.length < 2) { nameEl.focus(); nameEl.style.borderColor='rgba(200,80,80,0.6)'; return; }
-  if (!email || !email.includes('@')) { emailEl.focus(); emailEl.style.borderColor='rgba(200,80,80,0.6)'; return; }
-
-  nameEl.style.borderColor  = '';
-  emailEl.style.borderColor = '';
-  errEl.style.display       = 'none';
-  btn.classList.add('loading');
-  btn.disabled = true;
-
-  try {
-    // Use no-cors to avoid CORS block — we won't get a response body but the request goes through
-    await fetch(
-      `https://assets.mailerlite.com/jsonp/${ML_ACCOUNT}/forms/${resource.mlForm}/subscribe`,
-      {
-        method: 'POST',
-        mode:   'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'fields[name]':  name,
-          'fields[email]': email,
-          'ml-submit':     '1',
-          'anticsrf':      'true',
-        }).toString(),
-      }
-    );
-  } catch(e) {
-    // With no-cors, fetch always "succeeds" (opaque response) — errors here are network-level only
-  }
-
-  // Always show success after submit — MailerLite accepts the data
-  document.getElementById('confirm-email').textContent = email;
-  document.getElementById('form-state').style.display  = 'none';
+function showSuccess() {
+  if (done) return;
+  done = true;
+  document.getElementById('confirm-email').textContent = savedEmail;
+  document.getElementById('form-state').style.display = 'none';
   document.getElementById('success-state').classList.add('visible');
 }
 
-// Clear red border on focus
-['field-name','field-email'].forEach(id => {
-  document.getElementById(id).addEventListener('focus', e => e.target.style.borderColor = '');
+// Grab email whenever user types
+document.addEventListener('input', e => {
+  if (e.target.type === 'email') savedEmail = e.target.value;
 });
 
-// Allow Enter key to submit
-document.addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleSubmit();
+// Watch for MailerLite's success div becoming visible
+new MutationObserver(() => {
+  if (done) return;
+  const s = document.querySelector('.ml-form-successBody');
+  if (s && window.getComputedStyle(s).display !== 'none') showSuccess();
+}).observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:['style','class']});
+
+// Poll after every click on the submit button
+document.addEventListener('click', e => {
+  if (!e.target.closest('.ml-form-embedSubmit button')) return;
+  const em = document.querySelector('#ml-form-container input[type="email"]');
+  if (em) savedEmail = em.value;
+  let n = 0;
+  const t = setInterval(() => {
+    if (done) { clearInterval(t); return; }
+    const s = document.querySelector('.ml-form-successBody');
+    if (s && window.getComputedStyle(s).display !== 'none') { clearInterval(t); showSuccess(); }
+    if (++n > 20) clearInterval(t);
+  }, 500);
 });
 </script>
 
