@@ -521,6 +521,44 @@ resource.inside.forEach(item => {
 // Inject the correct MailerLite embedded form
 document.getElementById('ml-form-container').innerHTML =
   `<div class="ml-embedded" data-form="${resource.mlForm}"></div>`;
+  // Watch for MailerLite success
+window.addEventListener('message', function(event) {
+  if (event.data && event.data.type === 'ml-form-success') {
+    document.getElementById('ml-form-container').style.display = 'none';
+    document.querySelector('.form-fine').style.display = 'none';
+    document.querySelector('.trust-row').style.display = 'none';
+    document.querySelector('.form-eyebrow').style.display = 'none';
+    document.querySelector('.form-title').style.display = 'none';
+    document.querySelector('.form-sub').style.display = 'none';
+
+    const success = document.createElement('div');
+    success.innerHTML = `
+      <div style="text-align:center;padding:1rem 0;animation:fadeUp 0.6s ease forwards;">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:white;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--bg);margin-bottom:0.6rem;">Check your <em style="font-style:italic;color:var(--gold);">inbox.</em></h2>
+        <p style="font-size:0.85rem;color:rgba(248,245,240,0.5);line-height:1.7;margin-bottom:2rem;">Your download link is on its way.<br>Check your spam folder if you don't see it within 2 minutes.</p>
+        <p style="font-size:0.62rem;color:rgba(248,245,240,0.25);margin-top:1rem;">
+          <a href="/#resources" style="color:var(--gold);text-decoration:none;">← Explore more resources</a>
+          &nbsp;·&nbsp;
+          <a href="/#contact" style="color:var(--gold);text-decoration:none;">Book a Strategic Call</a>
+        </p>
+      </div>`;
+    document.getElementById('ml-form-container').after(success);
+  }
+});
+
+// Fallback: watch DOM for MailerLite success class
+const observer = new MutationObserver(function() {
+  const successBody = document.querySelector('.ml-form-successBody');
+  if (successBody && successBody.style.display !== 'none' && !document.getElementById('custom-success-shown')) {
+    document.getElementById('custom-success-shown') || document.body.setAttribute('id', 'custom-success-shown');
+    window.dispatchEvent(new MessageEvent('message', { data: { type: 'ml-form-success' } }));
+    observer.disconnect();
+  }
+});
+observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
 </script>
 
 </body>
